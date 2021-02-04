@@ -19,7 +19,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style>
   <meta name="description" content="加密文档，请提升权限（要办卡吗这位朋友~）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDEA里的vue项目iframe（HTML项目）同域连接步骤">
@@ -118,6 +132,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -154,7 +173,7 @@
     <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Ava">
       <meta itemprop="description" content="一个记录的过程">
     </span>
@@ -303,6 +322,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ava"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Ava</p>
   <div class="site-description" itemprop="description">一个记录的过程</div>
 </div>
@@ -397,6 +418,8 @@
 setInterval("createtime()",250);
 </script>
 
+<!-- 点击爆炸效果 -->
+
         
 
 
@@ -450,5 +473,3 @@ setInterval("createtime()",250);
 
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>

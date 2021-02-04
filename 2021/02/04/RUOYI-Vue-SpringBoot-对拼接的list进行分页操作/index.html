@@ -19,7 +19,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style>
   <meta name="description" content="背景若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。在git上有关于这个的提问 link.https:&#x2F;&#x2F;gitee.com&#x2F;y_project&#x2F;RuoYi-Vue&#x2F;issues&#x2F;I1GI52若依大佬简单说了解决办法，在此进行详细的补充 实现方法从star">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作">
@@ -123,6 +137,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -159,7 +178,7 @@
     <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Ava">
       <meta itemprop="description" content="一个记录的过程">
     </span>
@@ -293,6 +312,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ava"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Ava</p>
   <div class="site-description" itemprop="description">一个记录的过程</div>
 </div>
@@ -387,6 +408,8 @@
 setInterval("createtime()",250);
 </script>
 
+<!-- 点击爆炸效果 -->
+
         
 
 
@@ -440,5 +463,3 @@ setInterval("createtime()",250);
 
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>

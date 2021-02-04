@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Ava&#39;s blog">
 <meta property="og:description" content="1.在vue项目里使用iframe框架123&lt;div id&#x3D;&quot;middle&quot;&gt;  &lt;iframe id&#x3D;&quot;3diframe&quot; ref&#x3D;&quot;iframe&quot; :src&#x3D;&amp;#x27;src1&amp;#x27;  width&#x3D;&quot;730px&quot; height&#x3D;&quot;918px&quot; style&#x3D;&quot;b">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png">
-<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105916165.png">
-<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729110653488.png">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//20200729105652994-1612407683065.png">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//20200729105916165-1612407683063.png">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//20200729110653488-1612407683074.png">
 <meta property="article:published_time" content="2021-02-04T02:21:44.000Z">
-<meta property="article:modified_time" content="2021-02-04T02:54:54.338Z">
+<meta property="article:modified_time" content="2021-02-04T03:02:58.921Z">
 <meta property="article:author" content="Ava">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png">
+<meta name="twitter:image" content="http://jmuava.gitee.io/.io//20200729105652994-1612407683065.png">
 
 <link rel="canonical" href="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/">
 
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-04 10:21:44 / 修改时间：10:54:54" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time>
+              <time title="创建时间：2021-02-04 10:21:44 / 修改时间：11:02:58" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time>
             </span>
 
           
@@ -197,8 +197,8 @@
 <p>src既可以直接写进去当成静态使用，也可以写进script里动态改变</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;control&#x27;</span>,</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">      src1:<span class="string">&quot;/map/indoor3D-master/Amap2.html&quot;</span>,</span><br><span class="line">      floor:undefined,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-在IDE的vue项目里设置proxy路径，如"><a href="#2-在IDE的vue项目里设置proxy路径，如" class="headerlink" title="2.在IDE的vue项目里设置proxy路径，如"></a>2.在IDE的vue项目里设置proxy路径，如</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  proxy: &#123;</span><br><span class="line">    <span class="string">&quot;/map&quot;</span>: &#123;</span><br><span class="line">      target: <span class="string">&quot;http://localhost:8080&quot;</span>, <span class="comment">// 本地模拟数据服务器</span></span><br><span class="line">      changeOrigin: <span class="keyword">true</span>,<span class="comment">//将选项changeOrigin设置true为基于名称的虚拟托管站点。</span></span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        <span class="string">&quot;^/map&quot;</span>: <span class="string">&quot;&quot;</span> <span class="comment">// 去掉接口地址中的api字符串,路径重写</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png"><br>html的端口号和vue项目使用的端口号不能一致，否则会显示冲突，被占用<br>设置vue项目端口号<br><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105916165.png"></p>
-<h4 id="3-在html项目里设置端口号"><a href="#3-在html项目里设置端口号" class="headerlink" title="3.在html项目里设置端口号"></a>3.在html项目里设置端口号</h4><p>IDEA的默认端口号是63342，而我们需要的是8080<br>手动设置：file-&gt;settings-&gt;build-&gt;debugger-&gt;build-in-server-&gt;port<br>同时勾选 Can accept external connections 和 Allow unsigned requests<br><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729110653488.png"></p>
+<p><img src="/.io//20200729105652994-1612407683065.png"><br>html的端口号和vue项目使用的端口号不能一致，否则会显示冲突，被占用<br>设置vue项目端口号<br><img src="/.io//20200729105916165-1612407683063.png"></p>
+<h4 id="3-在html项目里设置端口号"><a href="#3-在html项目里设置端口号" class="headerlink" title="3.在html项目里设置端口号"></a>3.在html项目里设置端口号</h4><p>IDEA的默认端口号是63342，而我们需要的是8080<br>手动设置：file-&gt;settings-&gt;build-&gt;debugger-&gt;build-in-server-&gt;port<br>同时勾选 Can accept external connections 和 Allow unsigned requests<br><img src="/.io//20200729110653488-1612407683074.png"></p>
 
     </div>
 

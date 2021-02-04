@@ -220,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-04 11:49:39 / 修改时间：17:14:09" itemprop="dateCreated datePublished" datetime="2021-02-04T11:49:39+08:00">2021-02-04</time>
+              <time title="创建时间：2021-02-04 11:49:39 / 修改时间：17:37:00" itemprop="dateCreated datePublished" datetime="2021-02-04T11:49:39+08:00">2021-02-04</time>
             </span>
 
           <br>
@@ -248,9 +248,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。<br>而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。<br>在git上有关于这个的提问 <a target="_blank" rel="noopener" href="https://www.csdn.net/">link</a>.<a target="_blank" rel="noopener" href="https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52">https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52</a><br>若依大佬简单说了解决办法，在此进行详细的补充<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150229579.png" alt="在这里插入图片描述"></p>
-<h5 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h5><p>从startPage()点进去<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150634649.png" alt="在这里插入图片描述"><br>这里的pageNum和pageSize是从前端数据里传进来的分页对象的属性<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150857124.png" alt="在这里插入图片描述"><br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150835440.png" alt="在这里插入图片描述"><br>然后对数据进行处理，当固定每页10条数据时：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableDataInfo <span class="title">list</span><span class="params">(TestDto testDto)</span> </span>&#123;</span><br><span class="line">       PageDomain pageDomain = TableSupport.buildPageRequest();</span><br><span class="line">       Integer pageNum = pageDomain.getPageNum();</span><br><span class="line">       Integer pageSize = pageDomain.getPageSize();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取到处理好的list集合</span></span><br><span class="line">       List&lt;TestDto&gt; result= sysTestService.selectSysTestList(testDto);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> num = result.size();</span><br><span class="line">       result = result.stream()</span><br><span class="line">       		.skip((pageNum - <span class="number">1</span>) * pageSize)</span><br><span class="line">       		.limit(pageSize)</span><br><span class="line">       		.collect(Collectors.toList());</span><br><span class="line">       TableDataInfo rspData = <span class="keyword">new</span> TableDataInfo();</span><br><span class="line">       rspData.setCode(HttpStatus.SUCCESS);</span><br><span class="line">       rspData.setRows(result);</span><br><span class="line">       rspData.setTotal(num);</span><br><span class="line">       <span class="keyword">return</span> rspData;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+          <h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。<br>而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -296,7 +302,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-04 10:21:44 / 修改时间：15:42:16" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time>
+              <time title="创建时间：2021-02-04 10:21:44 / 修改时间：17:37:28" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time>
             </span>
 
           <br>
@@ -326,11 +332,14 @@
       
           <h5 id="在vue项目里使用iframe框架"><a href="#在vue项目里使用iframe框架" class="headerlink" title="在vue项目里使用iframe框架"></a>在vue项目里使用iframe框架</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;middle&quot;</span>&gt;</span><br><span class="line">  &lt;iframe id=&quot;3diframe&quot; ref=&quot;iframe&quot; :src=&#x27;src1&#x27;  width=&quot;730px&quot; height=&quot;918px&quot; style=&quot;background-color=transparent&quot; frameborder=&quot;0&quot; title=&quot;test&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>src既可以直接写进去当成静态使用，也可以写进script里动态改变</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;control&#x27;</span>,</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">      src1:<span class="string">&quot;/map/indoor3D-master/Amap2.html&quot;</span>,</span><br><span class="line">      floor:undefined,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="在IDE的vue项目里设置proxy路径，如"><a href="#在IDE的vue项目里设置proxy路径，如" class="headerlink" title="在IDE的vue项目里设置proxy路径，如"></a>在IDE的vue项目里设置proxy路径，如</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  proxy: &#123;</span><br><span class="line">    <span class="string">&quot;/map&quot;</span>: &#123;</span><br><span class="line">      target: <span class="string">&quot;http://localhost:8080&quot;</span>, <span class="comment">// 本地模拟数据服务器</span></span><br><span class="line">      changeOrigin: <span class="keyword">true</span>,<span class="comment">//将选项changeOrigin设置true为基于名称的虚拟托管站点。</span></span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        <span class="string">&quot;^/map&quot;</span>: <span class="string">&quot;&quot;</span> <span class="comment">// 去掉接口地址中的api字符串,路径重写</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png"><br>html的端口号和vue项目使用的端口号不能一致，否则会显示冲突，被占用<br>设置vue项目端口号<br><img src="/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105916165.png"></p>
-<h5 id="在html项目里设置端口号"><a href="#在html项目里设置端口号" class="headerlink" title="在html项目里设置端口号"></a>在html项目里设置端口号</h5><p>IDEA的默认端口号是63342，而我们需要的是8080<br>手动设置：file-&gt;settings-&gt;build-&gt;debugger-&gt;build-in-server-&gt;port<br>同时勾选 Can accept external connections 和 Allow unsigned requests<br><img src="/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729110653488.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -602,6 +611,8 @@ setInterval("createtime()",250);
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -643,5 +654,5 @@ setInterval("createtime()",250);
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-<模型名>"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -20,30 +20,36 @@
     var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一个记录的过程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ava&#39;s blog">
-<meta property="og:url" content="http://jmuava.gitee.io/index.html">
+  <meta name="description" content="1.在vue项目里使用iframe框架123&lt;div id&#x3D;&quot;middle&quot;&gt;  &lt;iframe id&#x3D;&quot;3diframe&quot; ref&#x3D;&quot;iframe&quot; :src&#x3D;&amp;#x27;src1&amp;#x27;  width&#x3D;&quot;730px&quot; height&#x3D;&quot;918px&quot; style&#x3D;&quot;b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA里的vue项目iframe（HTML项目）同域连接步骤">
+<meta property="og:url" content="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/index.html">
 <meta property="og:site_name" content="Ava&#39;s blog">
-<meta property="og:description" content="一个记录的过程">
+<meta property="og:description" content="1.在vue项目里使用iframe框架123&lt;div id&#x3D;&quot;middle&quot;&gt;  &lt;iframe id&#x3D;&quot;3diframe&quot; ref&#x3D;&quot;iframe&quot; :src&#x3D;&amp;#x27;src1&amp;#x27;  width&#x3D;&quot;730px&quot; height&#x3D;&quot;918px&quot; style&#x3D;&quot;b">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105916165.png">
+<meta property="og:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729110653488.png">
+<meta property="article:published_time" content="2021-02-04T02:21:44.000Z">
+<meta property="article:modified_time" content="2021-02-04T02:54:54.338Z">
 <meta property="article:author" content="Ava">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jmuava.gitee.io/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png">
 
-<link rel="canonical" href="http://jmuava.gitee.io/">
+<link rel="canonical" href="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Ava's blog</title>
+  <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤 | Ava's blog</title>
   
 
 
@@ -142,9 +148,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -160,10 +167,9 @@
       <meta itemprop="name" content="Ava's blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">IDEA里的vue项目iframe（HTML项目）同域连接步骤</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          IDEA里的vue项目iframe（HTML项目）同域连接步骤
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -187,93 +193,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="1-在vue项目里使用iframe框架"><a href="#1-在vue项目里使用iframe框架" class="headerlink" title="1.在vue项目里使用iframe框架"></a>1.在vue项目里使用iframe框架</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;middle&quot;</span>&gt;</span><br><span class="line">  &lt;iframe id=&quot;3diframe&quot; ref=&quot;iframe&quot; :src=&#x27;src1&#x27;  width=&quot;730px&quot; height=&quot;918px&quot; style=&quot;background-color=transparent&quot; frameborder=&quot;0&quot; title=&quot;test&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+        <h4 id="1-在vue项目里使用iframe框架"><a href="#1-在vue项目里使用iframe框架" class="headerlink" title="1.在vue项目里使用iframe框架"></a>1.在vue项目里使用iframe框架</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;middle&quot;</span>&gt;</span><br><span class="line">  &lt;iframe id=&quot;3diframe&quot; ref=&quot;iframe&quot; :src=&#x27;src1&#x27;  width=&quot;730px&quot; height=&quot;918px&quot; style=&quot;background-color=transparent&quot; frameborder=&quot;0&quot; title=&quot;test&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>src既可以直接写进去当成静态使用，也可以写进script里动态改变</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;control&#x27;</span>,</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">      src1:<span class="string">&quot;/map/indoor3D-master/Amap2.html&quot;</span>,</span><br><span class="line">      floor:undefined,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-在IDE的vue项目里设置proxy路径，如"><a href="#2-在IDE的vue项目里设置proxy路径，如" class="headerlink" title="2.在IDE的vue项目里设置proxy路径，如"></a>2.在IDE的vue项目里设置proxy路径，如</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  proxy: &#123;</span><br><span class="line">    <span class="string">&quot;/map&quot;</span>: &#123;</span><br><span class="line">      target: <span class="string">&quot;http://localhost:8080&quot;</span>, <span class="comment">// 本地模拟数据服务器</span></span><br><span class="line">      changeOrigin: <span class="keyword">true</span>,<span class="comment">//将选项changeOrigin设置true为基于名称的虚拟托管站点。</span></span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        <span class="string">&quot;^/map&quot;</span>: <span class="string">&quot;&quot;</span> <span class="comment">// 去掉接口地址中的api字符串,路径重写</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105652994.png"><br>html的端口号和vue项目使用的端口号不能一致，否则会显示冲突，被占用<br>设置vue项目端口号<br><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729105916165.png"></p>
 <h4 id="3-在html项目里设置端口号"><a href="#3-在html项目里设置端口号" class="headerlink" title="3.在html项目里设置端口号"></a>3.在html项目里设置端口号</h4><p>IDEA的默认端口号是63342，而我们需要的是8080<br>手动设置：file-&gt;settings-&gt;build-&gt;debugger-&gt;build-in-server-&gt;port<br>同时勾选 Can accept external connections 和 Allow unsigned requests<br><img src="/.io//02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/20200729110653488.png"></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/2021/01/26/%E5%BC%80%E5%A7%8Bblog%E8%AE%B0%E5%BD%95/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ava">
-      <meta itemprop="description" content="一个记录的过程">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ava's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/26/%E5%BC%80%E5%A7%8Bblog%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">开始记录Blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-26 15:17:10" itemprop="dateCreated datePublished" datetime="2021-01-26T15:17:10+08:00">2021-01-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-27 10:20:24" itemprop="dateModified" datetime="2021-01-27T10:20:24+08:00">2021-01-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>学无止境</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/26/%E5%BC%80%E5%A7%8Bblog%E8%AE%B0%E5%BD%95/" rel="prev" title="开始记录Blog">
+      <i class="fa fa-chevron-left"></i> 开始记录Blog
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -326,6 +276,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%9C%A8vue%E9%A1%B9%E7%9B%AE%E9%87%8C%E4%BD%BF%E7%94%A8iframe%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">1.在vue项目里使用iframe框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9C%A8IDE%E7%9A%84vue%E9%A1%B9%E7%9B%AE%E9%87%8C%E8%AE%BE%E7%BD%AEproxy%E8%B7%AF%E5%BE%84%EF%BC%8C%E5%A6%82"><span class="nav-number">2.</span> <span class="nav-text">2.在IDE的vue项目里设置proxy路径，如</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%9C%A8html%E9%A1%B9%E7%9B%AE%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text">3.在html项目里设置端口号</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

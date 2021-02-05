@@ -96,6 +96,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Ava's blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -141,12 +142,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -207,7 +208,7 @@
     <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Ava">
       <meta itemprop="description" content="一个记录的过程">
     </span>
@@ -259,7 +260,7 @@
         <h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。<br>而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。</p>
 <a id="more"></a>
 
-<p>在git上有关于这个的提问 <a target="_blank" rel="noopener" href="https://www.csdn.net/">link</a>.<a target="_blank" rel="noopener" href="https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52">https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52</a><br>若依大佬简单说了解决办法，在此进行详细的补充<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150229579.png" alt="在这里插入图片描述"></p>
+<p>在git上有关于这个的提问 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.csdn.net/">link</a>.<a target="_blank" rel="noopener external nofollow noreferrer" href="https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52">https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52</a><br>若依大佬简单说了解决办法，在此进行详细的补充<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150229579.png" alt="在这里插入图片描述"></p>
 <h5 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h5><p>从startPage()点进去<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150634649.png" alt="在这里插入图片描述"><br>这里的pageNum和pageSize是从前端数据里传进来的分页对象的属性<br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150857124.png" alt="在这里插入图片描述"><br><img src="/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150835440.png" alt="在这里插入图片描述"><br>然后对数据进行处理，当固定每页10条数据时：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableDataInfo <span class="title">list</span><span class="params">(TestDto testDto)</span> </span>&#123;</span><br><span class="line">       PageDomain pageDomain = TableSupport.buildPageRequest();</span><br><span class="line">       Integer pageNum = pageDomain.getPageNum();</span><br><span class="line">       Integer pageSize = pageDomain.getPageSize();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取到处理好的list集合</span></span><br><span class="line">       List&lt;TestDto&gt; result= sysTestService.selectSysTestList(testDto);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> num = result.size();</span><br><span class="line">       result = result.stream()</span><br><span class="line">       		.skip((pageNum - <span class="number">1</span>) * pageSize)</span><br><span class="line">       		.limit(pageSize)</span><br><span class="line">       		.collect(Collectors.toList());</span><br><span class="line">       TableDataInfo rspData = <span class="keyword">new</span> TableDataInfo();</span><br><span class="line">       rspData.setCode(HttpStatus.SUCCESS);</span><br><span class="line">       rspData.setRows(result);</span><br><span class="line">       rspData.setTotal(num);</span><br><span class="line">       <span class="keyword">return</span> rspData;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
     </div>
@@ -270,6 +271,23 @@
     <div> 
       <div> <div style="text-align:center;color:#bfbfbf;font-size:16px;"> <span>--------- 没有啦 </span> <i class="fa fa-paw"></i> <span> 感谢阅读 --------</span> </div> </div> 
     </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Ava
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/" title="RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作">http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-对拼接的list进行分页操作/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -350,6 +368,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ava"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Ava</p>
   <div class="site-description" itemprop="description">一个记录的过程</div>
 </div>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ava&#39;s blog</title>
+  <icon>http://jmuava.gitee.io/icon.png</icon>
+  <subtitle>keep study</subtitle>
+  <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
+  
+  <link href="http://jmuava.gitee.io/"/>
+  <updated>2021-02-04T09:37:00.555Z</updated>
+  <id>http://jmuava.gitee.io/</id>
+  
+  <author>
+    <name>Ava</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
+    <link href="http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/"/>
+    <id>http://jmuava.gitee.io/2021/02/04/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-02-04T03:49:39.000Z</published>
+    <updated>2021-02-04T09:37:00.555Z</updated>
+    
+    
+    <summary type="html">&lt;h5 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h5&gt;&lt;p&gt;若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。&lt;br&gt;而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="springBoot" scheme="http://jmuava.gitee.io/tags/springBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤</title>
+    <link href="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/</id>
+    <published>2021-02-04T02:21:44.000Z</published>
+    <updated>2021-02-04T09:37:28.030Z</updated>
+    
+    
+    <summary type="html">&lt;h5 id=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;a href=&quot;#在vue项目里使用iframe框架&quot; class=&quot;headerlink&quot; title=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;/a&gt;在vue项目里使用iframe框架&lt;/h5&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div id=&lt;span class=&quot;string&quot;&gt;&amp;quot;middle&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;iframe id=&amp;quot;3diframe&amp;quot; ref=&amp;quot;iframe&amp;quot; :src=&amp;#x27;src1&amp;#x27;  width=&amp;quot;730px&amp;quot; height=&amp;quot;918px&amp;quot; style=&amp;quot;background-color=transparent&amp;quot; frameborder=&amp;quot;0&amp;quot; title=&amp;quot;test&amp;quot; scrolling=&amp;quot;no&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;src既可以直接写进去当成静态使用，也可以写进script里动态改变&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="vue" scheme="http://jmuava.gitee.io/tags/vue/"/>
+    
+    <category term="iframe" scheme="http://jmuava.gitee.io/tags/iframe/"/>
+    
+    <category term="html" scheme="http://jmuava.gitee.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开始记录Blog</title>
+    <link href="http://jmuava.gitee.io/2021/01/26/%E5%BC%80%E5%A7%8Bblog%E8%AE%B0%E5%BD%95/"/>
+    <id>http://jmuava.gitee.io/2021/01/26/%E5%BC%80%E5%A7%8Bblog%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-01-26T07:17:10.842Z</published>
+    <updated>2021-01-27T02:20:24.024Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;学无止境&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

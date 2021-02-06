@@ -6,7 +6,7 @@
   <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jmuava.gitee.io/"/>
-  <updated>2021-02-04T09:37:00.555Z</updated>
+  <updated>2021-02-06T07:43:37.774Z</updated>
   <id>http://jmuava.gitee.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo+NexT 博客个性化配置</title>
+    <link href="http://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
+    <id>http://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-02-05T09:05:37.000Z</published>
+    <updated>2021-02-06T07:43:37.774Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)&lt;/p&gt;
+&lt;p&gt;本博客某些部分基于以下配置生效，防止更新丢失，在此做个记录。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://jmuava.gitee.io/tags/Hexo/"/>
+    
+    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
+    
+  </entry>
   
   <entry>
     <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
@@ -38,11 +58,10 @@
     <link href="http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/"/>
     <id>http://jmuava.gitee.io/2021/02/04/IDEA%E9%87%8C%E7%9A%84vue%E9%A1%B9%E7%9B%AEiframe%EF%BC%88HTML%E9%A1%B9%E7%9B%AE%EF%BC%89%E5%90%8C%E5%9F%9F%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4/</id>
     <published>2021-02-04T02:21:44.000Z</published>
-    <updated>2021-02-04T09:37:28.030Z</updated>
+    <updated>2021-02-05T06:55:53.950Z</updated>
     
     
-    <summary type="html">&lt;h5 id=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;a href=&quot;#在vue项目里使用iframe框架&quot; class=&quot;headerlink&quot; title=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;/a&gt;在vue项目里使用iframe框架&lt;/h5&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div id=&lt;span class=&quot;string&quot;&gt;&amp;quot;middle&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;iframe id=&amp;quot;3diframe&amp;quot; ref=&amp;quot;iframe&amp;quot; :src=&amp;#x27;src1&amp;#x27;  width=&amp;quot;730px&amp;quot; height=&amp;quot;918px&amp;quot; style=&amp;quot;background-color=transparent&amp;quot; frameborder=&amp;quot;0&amp;quot; title=&amp;quot;test&amp;quot; scrolling=&amp;quot;no&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;src既可以直接写进去当成静态使用，也可以写进script里动态改变&lt;/p&gt;</summary>
+    <summary type="html">The article has been encrypted, please enter your password to view.&lt;br&gt;</summary>
     
     
     

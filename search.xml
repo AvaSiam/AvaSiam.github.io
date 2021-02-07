@@ -49,8 +49,6 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Security</span></span><br><span class="line">encrypt:</span><br><span class="line">  enable: true</span><br><span class="line">  abstract: 加密文档，请提升权限（要办卡吗这位朋友~）</span><br><span class="line">  message: 点我输入密码~</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  theme: xray</span><br><span class="line">  wrong_pass_message: 密码不太对, 还差一点</span><br><span class="line">  wrong_hash_message: 没有校验, 勉强开放好了  </span><br></pre></td></tr></table></figure>
 
 
-
-
 <h4 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h4><p><font color="blue"><a href="https://tding.top/archives/42c38b10.html">Hexo-NexT主题配置</a></font></p>
 <p><font color="blue"><a href="https://tding.top/archives/2bd6d82.html">Hexo-NexT 版本更新记录</a></font></p>
 <p><font color="blue"><a href="https://tding.top/docs/getting-started/data-files.html">数据文件</a></font></p>

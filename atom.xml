@@ -6,7 +6,7 @@
   <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jmuava.gitee.io/"/>
-  <updated>2021-02-07T10:09:48.731Z</updated>
+  <updated>2021-02-20T08:01:55.687Z</updated>
   <id>http://jmuava.gitee.io/</id>
   
   <author>
@@ -17,11 +17,72 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>NexT版本更新记录7.8.0 - 8.2.1</title>
+    <link href="http://jmuava.gitee.io/2021/02/20/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/"/>
+    <id>http://jmuava.gitee.io/2021/02/20/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/</id>
+    <published>2021-02-20T03:29:57.000Z</published>
+    <updated>2021-02-20T08:01:55.687Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;由于可抗力（Twikoo真香！）因素，搭建博客不到一个月，决定更新主题版本。&lt;/p&gt;
+&lt;p&gt;版本7.8.0到版本8.2.1最明显的区别，应该就在仓库上了，主题NexT的GIT存储库更改。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NexT主题添加Twikoo评论系统</title>
+    <link href="http://jmuava.gitee.io/2021/02/20/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://jmuava.gitee.io/2021/02/20/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</id>
+    <published>2021-02-20T02:29:55.000Z</published>
+    <updated>2021-02-20T06:32:20.871Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;版本&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;年份&lt;/th&gt;
+&lt;th&gt;仓库&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;v5.1.4 或更低&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;2014 ~ 2017&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;https://github.com/iissnan/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;v6.0.0 ~ v7.8.0&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;2018 ~ 2019&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot;&gt;https://github.com/theme-next/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;v8.0.0 或更高&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;2020&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/next-theme/hexo-theme-next&quot;&gt;https://github.com/next-theme/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    
+    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
+    
+    <category term="Twikoo" scheme="http://jmuava.gitee.io/tags/Twikoo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo+NexT 博客个性化配置</title>
     <link href="http://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
     <id>http://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
     <published>2021-02-05T09:05:37.000Z</published>
-    <updated>2021-02-07T10:09:48.731Z</updated>
+    <updated>2021-02-20T04:04:24.648Z</updated>
     
     
     <summary type="html">&lt;p&gt;版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)&lt;/p&gt;

@@ -18,8 +18,8 @@
   
   <entry>
     <title>安装hexo-abbrlink插件后图片路径错误</title>
-    <link href="http://jmuava.gitee.io/posts/e6e4b7aa/"/>
-    <id>http://jmuava.gitee.io/posts/e6e4b7aa/</id>
+    <link href="http://jmuava.gitee.io/posts/e6e4b7aa.html"/>
+    <id>http://jmuava.gitee.io/posts/e6e4b7aa.html</id>
     <published>2021-02-24T06:50:21.000Z</published>
     <updated>2021-02-24T08:20:54.481Z</updated>
     
@@ -36,8 +36,8 @@
   
   <entry>
     <title>NexT版本更新记录7.8.0 - 8.2.1</title>
-    <link href="http://jmuava.gitee.io/posts/58272/"/>
-    <id>http://jmuava.gitee.io/posts/58272/</id>
+    <link href="http://jmuava.gitee.io/posts/58272.html"/>
+    <id>http://jmuava.gitee.io/posts/58272.html</id>
     <published>2021-02-20T03:29:57.000Z</published>
     <updated>2021-02-24T08:21:13.729Z</updated>
     
@@ -54,8 +54,8 @@
   
   <entry>
     <title>NexT主题添加Twikoo评论系统</title>
-    <link href="http://jmuava.gitee.io/posts/43436/"/>
-    <id>http://jmuava.gitee.io/posts/43436/</id>
+    <link href="http://jmuava.gitee.io/posts/43436.html"/>
+    <id>http://jmuava.gitee.io/posts/43436.html</id>
     <published>2021-02-20T02:29:55.000Z</published>
     <updated>2021-02-24T03:39:59.416Z</updated>
     
@@ -97,8 +97,8 @@
   
   <entry>
     <title>Hexo+NexT 博客个性化配置</title>
-    <link href="http://jmuava.gitee.io/posts/32997/"/>
-    <id>http://jmuava.gitee.io/posts/32997/</id>
+    <link href="http://jmuava.gitee.io/posts/32997.html"/>
+    <id>http://jmuava.gitee.io/posts/32997.html</id>
     <published>2021-02-05T09:05:37.000Z</published>
     <updated>2021-02-24T07:38:39.530Z</updated>
     
@@ -109,16 +109,16 @@
     
     
     
-    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
-    
     <category term="Hexo" scheme="http://jmuava.gitee.io/tags/Hexo/"/>
+    
+    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
     
   </entry>
   
   <entry>
     <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
-    <link href="http://jmuava.gitee.io/posts/b692fe48/"/>
-    <id>http://jmuava.gitee.io/posts/b692fe48/</id>
+    <link href="http://jmuava.gitee.io/posts/b692fe48.html"/>
+    <id>http://jmuava.gitee.io/posts/b692fe48.html</id>
     <published>2021-02-04T03:49:39.000Z</published>
     <updated>2021-02-24T06:44:55.452Z</updated>
     
@@ -134,8 +134,8 @@
   
   <entry>
     <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤</title>
-    <link href="http://jmuava.gitee.io/posts/b2bf1dca/"/>
-    <id>http://jmuava.gitee.io/posts/b2bf1dca/</id>
+    <link href="http://jmuava.gitee.io/posts/b2bf1dca.html"/>
+    <id>http://jmuava.gitee.io/posts/b2bf1dca.html</id>
     <published>2021-02-04T02:21:44.000Z</published>
     <updated>2021-02-24T06:44:55.451Z</updated>
     

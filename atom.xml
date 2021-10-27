@@ -6,7 +6,7 @@
   <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jmuava.gitee.io/"/>
-  <updated>2021-10-27T03:40:19.695Z</updated>
+  <updated>2021-10-27T05:46:58.316Z</updated>
   <id>http://jmuava.gitee.io/</id>
   
   <author>
@@ -21,14 +21,16 @@
     <link href="http://jmuava.gitee.io/posts/fb1f1bf6/"/>
     <id>http://jmuava.gitee.io/posts/fb1f1bf6/</id>
     <published>2021-10-27T03:19:56.000Z</published>
-    <updated>2021-10-27T03:40:19.695Z</updated>
+    <updated>2021-10-27T05:46:58.316Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h4 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -42,10 +44,10 @@
     <link href="http://jmuava.gitee.io/posts/1162c631/"/>
     <id>http://jmuava.gitee.io/posts/1162c631/</id>
     <published>2021-10-26T07:27:08.000Z</published>
-    <updated>2021-10-26T09:18:42.958Z</updated>
+    <updated>2021-10-27T05:39:27.350Z</updated>
     
     
-    <summary type="html">&lt;p&gt;​    基于SpringBoot-Vue的前后端分离项目，服务器部署在CentOS8操作系统上，与第三方进行统一认证接口的对接。第三方统一认证登录可以解决用户在浏览器打开多个web应用时需要输入多次用户名密码登录的问题，实现用户一次登录，多个系统使用的效果。s&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;​    基于SpringBoot-Vue的前后端分离项目，服务器部署在CentOS8操作系统上，与第三方进行统一认证接口的对接。第三方统一认证登录可以解决用户在浏览器打开多个web应用时需要输入多次用户名密码登录的问题，实现用户一次登录，多个系统使用的效果。 &lt;/p&gt;</summary>
     
     
     

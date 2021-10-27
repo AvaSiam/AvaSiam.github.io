@@ -6,7 +6,7 @@
   <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jmuava.gitee.io/"/>
-  <updated>2021-10-26T09:18:42.958Z</updated>
+  <updated>2021-10-27T03:39:21.534Z</updated>
   <id>http://jmuava.gitee.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【PicGo+Typora+Gitee】markdown图片上传并获取网络地址</title>
+    <link href="http://jmuava.gitee.io/posts/fb1f1bf6/"/>
+    <id>http://jmuava.gitee.io/posts/fb1f1bf6/</id>
+    <published>2021-10-27T03:19:56.000Z</published>
+    <updated>2021-10-27T03:39:21.534Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>SpringBoot-Vue第三方统一认证接口——调用与对接总结</title>
@@ -32,84 +53,20 @@
   </entry>
   
   <entry>
-    <title>部署服务器</title>
-    <link href="http://jmuava.gitee.io/posts/7e61d2cc/"/>
-    <id>http://jmuava.gitee.io/posts/7e61d2cc/</id>
-    <published>2021-10-25T08:22:51.000Z</published>
-    <updated>2021-10-25T08:51:52.030Z</updated>
+    <title>安装hexo-abbrlink插件后图片路径错误</title>
+    <link href="http://jmuava.gitee.io/posts/e6e4b7aa/"/>
+    <id>http://jmuava.gitee.io/posts/e6e4b7aa/</id>
+    <published>2021-02-24T06:50:21.000Z</published>
+    <updated>2021-10-26T09:59:43.161Z</updated>
     
     
-    <summary type="html">&lt;p&gt;基于CentOS8操作系统，有网的情况下配置环境，下载以下软件的Linux版本&lt;/p&gt;
-&lt;p&gt;后台：redis、mysql、jdk、&lt;/p&gt;
-&lt;p&gt;前端：nginx&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>开始记录Blog</title>
-    <link href="http://jmuava.gitee.io/posts/19486/"/>
-    <id>http://jmuava.gitee.io/posts/19486/</id>
-    <published>2021-07-13T04:52:55.380Z</published>
-    <updated>2021-02-23T07:45:52.182Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;学无止境&lt;/p&gt;
-</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;有中文路径的链接经常会乱码，插件hexo-abbrlink会将原来的URL地址重新进行进制转换和再编码，于是决定引入该插件。根据网上的教程安装后，博客里的图片都不能正常显示了。&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！&lt;/font&gt;&lt;/p&gt;</summary>
     
     
     
     
-  </entry>
-  
-  <entry>
-    <title>NexT主题添加Twikoo评论系统</title>
-    <link href="http://jmuava.gitee.io/posts/be34d0cb/"/>
-    <id>http://jmuava.gitee.io/posts/be34d0cb/</id>
-    <published>2021-02-23T07:52:11.000Z</published>
-    <updated>2021-02-24T06:56:43.277Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;版本&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;年份&lt;/th&gt;
-&lt;th&gt;仓库&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;v5.1.4 或更低&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;2014 ~ 2017&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;https://github.com/iissnan/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v6.0.0 ~ v7.8.0&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;2018 ~ 2019&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot;&gt;https://github.com/theme-next/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v8.0.0 或更高&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;2020&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/next-theme/hexo-theme-next&quot;&gt;https://github.com/next-theme/hexo-theme-next&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;</summary>
-    
-    
-    
-    
-    <category term="NexT" scheme="http://jmuava.gitee.io/tags/NexT/"/>
-    
-    <category term="Twikoo" scheme="http://jmuava.gitee.io/tags/Twikoo/"/>
+    <category term="-hexo" scheme="http://jmuava.gitee.io/tags/hexo/"/>
     
   </entry>
   
@@ -118,7 +75,7 @@
     <link href="http://jmuava.gitee.io/posts/58272/"/>
     <id>http://jmuava.gitee.io/posts/58272/</id>
     <published>2021-02-20T03:29:57.000Z</published>
-    <updated>2021-02-22T11:17:30.313Z</updated>
+    <updated>2021-10-26T09:59:43.157Z</updated>
     
     
     <summary type="html">&lt;p&gt;由于可抗力（Twikoo真香！）因素，搭建博客不到一个月，决定更新主题版本。&lt;/p&gt;
@@ -136,7 +93,7 @@
     <link href="http://jmuava.gitee.io/posts/43436/"/>
     <id>http://jmuava.gitee.io/posts/43436/</id>
     <published>2021-02-20T02:29:55.000Z</published>
-    <updated>2021-09-29T10:02:25.699Z</updated>
+    <updated>2021-10-26T09:59:43.153Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
@@ -179,7 +136,7 @@
     <link href="http://jmuava.gitee.io/posts/32997/"/>
     <id>http://jmuava.gitee.io/posts/32997/</id>
     <published>2021-02-05T09:05:37.000Z</published>
-    <updated>2021-02-23T07:44:07.871Z</updated>
+    <updated>2021-10-26T09:59:43.148Z</updated>
     
     
     <summary type="html">&lt;p&gt;版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)&lt;/p&gt;
@@ -196,10 +153,10 @@
   
   <entry>
     <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
-    <link href="http://jmuava.gitee.io/posts/16472/"/>
-    <id>http://jmuava.gitee.io/posts/16472/</id>
+    <link href="http://jmuava.gitee.io/posts/b692fe48/"/>
+    <id>http://jmuava.gitee.io/posts/b692fe48/</id>
     <published>2021-02-04T03:49:39.000Z</published>
-    <updated>2021-02-22T11:17:30.314Z</updated>
+    <updated>2021-10-26T09:59:43.159Z</updated>
     
     
     <summary type="html">&lt;h5 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h5&gt;&lt;p&gt;若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。&lt;br&gt;而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。&lt;/p&gt;</summary>
@@ -213,10 +170,10 @@
   
   <entry>
     <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤</title>
-    <link href="http://jmuava.gitee.io/posts/8612/"/>
-    <id>http://jmuava.gitee.io/posts/8612/</id>
+    <link href="http://jmuava.gitee.io/posts/b2bf1dca/"/>
+    <id>http://jmuava.gitee.io/posts/b2bf1dca/</id>
     <published>2021-02-04T02:21:44.000Z</published>
-    <updated>2021-10-26T09:21:45.294Z</updated>
+    <updated>2021-10-26T09:59:43.150Z</updated>
     
     
     <summary type="html">The article has been encrypted, please enter your password to view.&lt;br&gt;</summary>

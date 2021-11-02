@@ -1,258 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo+NexT 博客个性化配置</title>
-    <url>/posts/32997/</url>
-    <content><![CDATA[<p>版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)</p>
-<p>本博客某些部分基于以下配置生效，防止更新丢失，在此做个记录。</p>
+    <title>【PicGo+Typora+Gitee】markdown图片上传并获取网络地址</title>
+    <url>/posts/fb1f1bf6/</url>
+    <content><![CDATA[<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li><p>Gitee</p>
+<p>新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027102140541.png" alt="新建仓库"></p>
 <a id="more"></a>
 
-
-
-<p><font color="red"><strong>在配置文件里修改前，最好检查下其中是否有存在要修改的同名配置。 如果存在，将两者配置在一起。</strong></font></p>
-<blockquote>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
-</blockquote>
-<h3 id="NexT主题版本更新"><a href="#NexT主题版本更新" class="headerlink" title="NexT主题版本更新"></a><font color="red">NexT主题版本更新</font></h3><p>​    本博客搭建的时候使用的NexT版本是7.8.0，在美化主题的时候发现有些教程里的路径如<code>hexo/themes/next/source/css/_custom/custom.styl</code> 是没有的，官方在7.3.0版本更新时推荐采用数据文件，将主题与配置分离，即自定义布局、样式、自定义配置等的代码与主题文件分离。</p>
-<ul>
-<li><p>将主题配置修改放在<code>hexo/source/_data/next.yml</code>里（_data文件与_post文件同级,没有的话就新建目录，前提是确保NexT版本更新到7.3.0及以上)，这样就不用去修改<code>hexo/themes/next/_config.yml</code>文件，等到NexT再次更新的时候，一些自定义配置就不会因NexT升级而消失，尽量做到平滑升级。</p>
-<ol>
-<li>在 <code>hexo/source/_data</code> 中新建 <code>next.yml</code> 文件</li>
-<li>将 <code>next.yml</code> 中的属性 <code>override</code> 设置为 true</li>
-<li>将所有 NexT 主题选项从主题配置文件<code>NexT/_config.yml</code>复制到 <code>hexo/source/_data/next.yml</code> 中</li>
-</ol>
-</li>
-<li><p>将代码放入<code>hexo/source/_data</code>文件夹下，原 <code>hexo/themes/next/source/css/_custom/custom.styl</code> 的配置，现在都放在了<code>hexo/source/_data/styles.styl</code>里，在 NexT 的配置文件 <code>next.yml</code> 中取消 <code>styles.styl</code> 的注释。</p>
+<p>获取私人令牌token，复制并保存好令牌，下面PicGo设置时需要用到</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027102647981.png" alt="获取token"></p>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line"></span><br><span class="line">-  <span class="comment">#style: source/_data/styles.styl</span></span><br><span class="line">+  style: source/_data/styles.styl <span class="comment">#将style前的#去掉</span></span><br></pre></td></tr></table></figure>
-<h3 id="主题颜色"><a href="#主题颜色" class="headerlink" title="主题颜色"></a>主题颜色</h3><p>​    在<code>source/_data</code>目录下的<font color="red"> variables.styl</font>（没有则新增），修改主题颜色。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Colors</span></span><br><span class="line"><span class="comment">// colors for use across theme.</span></span><br><span class="line"><span class="comment">// --------------------------------------------------</span></span><br><span class="line">$black-deep   = #02394e;  //修改主题的颜色</span><br></pre></td></tr></table></figure>
-<p>​    还有一些其他的设定可以修改颜色，需要的话可以自行修改。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">$whitesmoke   = #f5f5f5;</span><br><span class="line">$gainsboro    = #eee;  //这个是边栏头像外框的颜色，</span><br><span class="line">$grey-lighter = #ddd;  //文章中插入图片边框颜色</span><br><span class="line">$grey-light   = #ccc;  //文章之间分割线、下划线颜色</span><br><span class="line">$grey         = #bbb;  //页面选中圆点颜色</span><br><span class="line">$grey-dark    = #999;</span><br><span class="line">$grey-dim     = #666;  //侧边栏目录字体颜色</span><br><span class="line">$black-light  = #555;  //修改文章字体颜色</span><br><span class="line">$black-dim    = #333;</span><br><span class="line">$black-deep   = #02394e;  //修改主题的颜色</span><br><span class="line">$red          = #ff2a2a;</span><br><span class="line">$blue-bright  = #87daff;</span><br><span class="line">$blue         = #0684bd;</span><br><span class="line">$blue-deep    = #262a30;</span><br><span class="line">$orange       = #fc6423;   //浏览文章时，目录选中的颜色</span><br></pre></td></tr></table></figure>
-<h3 id="界面样式"><a href="#界面样式" class="headerlink" title="界面样式"></a>界面样式</h3><p>​    修改界面显示的样式,设置位置、背景、显示等。</p>
-<p>如不想要这条灰线</p>
-<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614145911122.png"></p>
-<p>按F12定位到样式的设定位置</p>
-<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614145999390.png"></p>
-<p>这条灰线是由于post-footer里没有内容，而post-eof的默认背景是灰色而显示出来的，于是在<code>hexo/source/_data/styles.styl</code>文件里设置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-eof&#123;</span><br><span class="line">  background: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614146200662.png" alt="灰线没有了"></p>
-<h3 id="主题背景"><a href="#主题背景" class="headerlink" title="主题背景"></a>主题背景</h3><p>​    在<code>_data/styles.styl</code>里，修改背景图片。图片文件放在<code>blog/source/images</code>路径下。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//背景图片</span></span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/whale.jpg);</span><br><span class="line">    background-repeat: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-attachment:fixed; </span><br><span class="line">    background-size: cover;      <span class="comment">//填充</span></span><br><span class="line">    background-position:<span class="number">50</span>% <span class="number">50</span>%; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="设置圆角"><a href="#设置圆角" class="headerlink" title="设置圆角"></a>设置圆角</h3><p>给侧边栏和菜单栏以及文章部分设置圆角，在<code>_data/variables</code>里添加：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 圆角设置</span></span><br><span class="line">$border-radius-inner = 10px 10px 10px 10px;</span><br><span class="line">$border-radius = 10px;</span><br></pre></td></tr></table></figure>
-<p>菜单栏和文章的边框有圆角了，还差菜单下的侧边框。在<code>_data/styles.styl</code>里添加：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//侧边框</span></span><br><span class="line">.sidebar &#123;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义鼠标点击特效"><a href="#自定义鼠标点击特效" class="headerlink" title="自定义鼠标点击特效"></a>自定义鼠标点击特效</h3><p>​    网上的博客鼠标点击特效常见的有四种：<font color="red">fireworks | explosion | love | text</font></p>
-<p>将对应的js文件放到<code>hexo/source/js</code>，然后在<code>source/_data/next.yml</code>里设置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 鼠标点击特效</span></span><br><span class="line"><span class="comment"># mouse click effect: fireworks | explosion | love | text</span></span><br><span class="line">cursor_effect: explosion</span><br></pre></td></tr></table></figure>
-<p>由于本博客整体的颜色是蓝色调，为了贴合对点击特效进行了修改。</p>
-<p><font color="red">注意：这里颜色的字母要大写</font></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">function updateCoords(e) &#123;</span><br><span class="line">    pointerX = (e.clientX || e.touches[<span class="number">0</span>].clientX) - canvasEl.getBoundingClientRect().left,</span><br><span class="line">    pointerY = e.clientY || e.touches[<span class="number">0</span>].clientY - canvasEl.getBoundingClientRect().top</span><br><span class="line">&#125;</span><br><span class="line">function setParticuleDirection(e) &#123;</span><br><span class="line">    var t = anime.random(<span class="number">0</span>, <span class="number">360</span>) * Math.PI / <span class="number">180</span>,     //圆出现的角度</span><br><span class="line">    a = anime.random(<span class="number">50</span>, <span class="number">180</span>),</span><br><span class="line">    n = [ - <span class="number">1</span>, <span class="number">1</span>][anime.random(<span class="number">0</span>, <span class="number">1</span>)] * a;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        x: e.x + n * Math.cos(t),</span><br><span class="line">        y: e.y + n * Math.sin(t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function createParticule(e, t) &#123;</span><br><span class="line">    var a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.x = e,</span><br><span class="line">    a.y = t,</span><br><span class="line">    a.color = colors[anime.random(<span class="number">0</span>, colors.length - <span class="number">1</span>)],</span><br><span class="line">    a.radius = anime.random(<span class="number">16</span>, <span class="number">32</span>),</span><br><span class="line">    a.endPos = setParticuleDirection(a),</span><br><span class="line">    a.draw = function() &#123;</span><br><span class="line">        ctx.beginPath(),</span><br><span class="line">        ctx.arc(a.x, a.y, a.radius, <span class="number">0</span>, <span class="number">2</span> * Math.PI, !<span class="number">0</span>),</span><br><span class="line">        ctx.fillStyle = a.color,</span><br><span class="line">        ctx.fill()</span><br><span class="line">    &#125;,</span><br><span class="line">    a</span><br><span class="line">&#125;</span><br><span class="line">function createCircle(e, t) &#123;</span><br><span class="line">    var a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.x = e,</span><br><span class="line">    a.y = t,</span><br><span class="line">    a.color = <span class="string">&quot;#1E92FB&quot;</span>,          //线圈的颜色</span><br><span class="line">    a.radius = <span class="number">.1</span>,</span><br><span class="line">    a.alpha = <span class="number">.5</span>,</span><br><span class="line">    a.lineWidth = <span class="number">3</span>,</span><br><span class="line">    a.draw = function() &#123;</span><br><span class="line">        ctx.globalAlpha = a.alpha,</span><br><span class="line">        ctx.beginPath(),</span><br><span class="line">        ctx.arc(a.x, a.y, a.radius, <span class="number">0</span>, <span class="number">2</span> * Math.PI, !<span class="number">0</span>),</span><br><span class="line">        ctx.lineWidth = a.lineWidth,</span><br><span class="line">        ctx.strokeStyle = a.color,</span><br><span class="line">        ctx.stroke(),</span><br><span class="line">        ctx.globalAlpha = <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a</span><br><span class="line">&#125;</span><br><span class="line">function renderParticule(e) &#123;</span><br><span class="line">    <span class="keyword">for</span> (var t = <span class="number">0</span>; t &lt; e.animatables.length; t++) e.animatables[t].target.draw()</span><br><span class="line">&#125;</span><br><span class="line">function animateParticules(e, t) &#123;</span><br><span class="line">    <span class="keyword">for</span> (var a = createCircle(e, t), n = [], i = <span class="number">0</span>; i &lt; numberOfParticules; i++) n.push(createParticule(e, t));</span><br><span class="line">    anime.timeline().add(&#123;</span><br><span class="line">        targets: n,</span><br><span class="line">        x: function(e) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.endPos.x</span><br><span class="line">        &#125;,</span><br><span class="line">        y: function(e) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.endPos.y</span><br><span class="line">        &#125;,</span><br><span class="line">        radius: <span class="number">.1</span>,</span><br><span class="line">        duration: anime.random(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        easing: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        update: renderParticule</span><br><span class="line">    &#125;).add(&#123;</span><br><span class="line">        targets: a,</span><br><span class="line">        radius: anime.random(<span class="number">80</span>, <span class="number">160</span>),</span><br><span class="line">        lineWidth: <span class="number">0</span>,</span><br><span class="line">        alpha: &#123;</span><br><span class="line">            value: <span class="number">0</span>,</span><br><span class="line">            easing: <span class="string">&quot;linear&quot;</span>,</span><br><span class="line">            duration: anime.random(<span class="number">600</span>, <span class="number">800</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        duration: anime.random(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        easing: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        update: renderParticule,</span><br><span class="line">        offset: <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">function debounce(e, t) &#123;</span><br><span class="line">    var a;</span><br><span class="line">    <span class="keyword">return</span> function() &#123;</span><br><span class="line">        var n = this,</span><br><span class="line">        i = arguments;</span><br><span class="line">        clearTimeout(a),</span><br><span class="line">        a = setTimeout(function() &#123;</span><br><span class="line">            e.apply(n, i)</span><br><span class="line">        &#125;,</span><br><span class="line">        t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var canvasEl = document.querySelector(<span class="string">&quot;.fireworks&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvasEl) &#123;</span><br><span class="line">    var ctx = canvasEl.getContext(<span class="string">&quot;2d&quot;</span>),</span><br><span class="line">    numberOfParticules = <span class="number">5</span>,   //点击的圆数量</span><br><span class="line">    pointerX = <span class="number">0</span>,</span><br><span class="line">    pointerY = <span class="number">0</span>,</span><br><span class="line">    tap = <span class="string">&quot;mousedown&quot;</span>,</span><br><span class="line">    colors = [<span class="string">&quot;#447C8C&quot;</span>, <span class="string">&quot;#024E66&quot;</span>, <span class="string">&quot;#387A91&quot;</span>, <span class="string">&quot;#86D8FF&quot;</span>, <span class="string">&quot;#DDEAEF&quot;</span>],//随机出现的颜色</span><br><span class="line">    setCanvasSize = debounce(function() &#123;</span><br><span class="line">        canvasEl.width = <span class="number">2</span> * window.innerWidth,</span><br><span class="line">        canvasEl.height = <span class="number">2</span> * window.innerHeight,</span><br><span class="line">        canvasEl.style.width = window.innerWidth + <span class="string">&quot;px&quot;</span>,</span><br><span class="line">        canvasEl.style.height = window.innerHeight + <span class="string">&quot;px&quot;</span>,</span><br><span class="line">        canvasEl.getContext(<span class="string">&quot;2d&quot;</span>).scale(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="number">500</span>),</span><br><span class="line">    render = anime(&#123;</span><br><span class="line">        duration: <span class="number">1</span> / <span class="number">0</span>,</span><br><span class="line">        update: function() &#123;</span><br><span class="line">            ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvasEl.width, canvasEl.height)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    document.addEventListener(tap,</span><br><span class="line">    function(e) &#123;</span><br><span class="line">        <span class="string">&quot;sidebar&quot;</span> !== e.target.<span class="built_in">id</span> &amp;&amp; <span class="string">&quot;toggle-sidebar&quot;</span> !== e.target.<span class="built_in">id</span> &amp;&amp; <span class="string">&quot;A&quot;</span> !== e.target.nodeName &amp;&amp; <span class="string">&quot;IMG&quot;</span> !== e.target.nodeName &amp;&amp; (render.play(), updateCoords(e), animateParticules(pointerX, pointerY))</span><br><span class="line">    &#125;,</span><br><span class="line">    !<span class="number">1</span>),</span><br><span class="line">    setCanvasSize(),</span><br><span class="line">    window.addEventListener(<span class="string">&quot;resize&quot;</span>, setCanvasSize, !<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="网页显示logo"><a href="#网页显示logo" class="headerlink" title="网页显示logo"></a>网页显示logo</h3><p>将图片放在<code>hexo/source/images</code>，将图片的名称改为 <font color="red">favicon.ico</font>，同时在<code>next.yml</code>里设置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Site Information Settings</span></span><br><span class="line"><span class="comment"># See: https://theme-NexT.org/docs/getting-started/</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">favicon:</span><br><span class="line">  small: /images/favicon.ico</span><br><span class="line">  medium: /images/favicon.ico</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-NexT.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br></pre></td></tr></table></figure>
-<h3 id="mac主题的代码块风格"><a href="#mac主题的代码块风格" class="headerlink" title="mac主题的代码块风格"></a>mac主题的代码块风格</h3><p>7.8.0版本的NexT主题已经支持mac风格的代码块设置，在<code>next.yml</code>搜索 <font color="red">codeblock</font> 设置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line"></span><br><span class="line">  highlight_theme: solarized dark <span class="comment">#支持以上八种主题，为了更加贴近背景，我选择了solarized dark</span></span><br><span class="line">        </span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true <span class="comment"># 增加复制按钮的开关</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: true<span class="comment"># 点击复制完后是否显示 复制成功 结果提示</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
-<h3 id="文章加密"><a href="#文章加密" class="headerlink" title="文章加密"></a>文章加密</h3><p>引入依赖：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt </span><br></pre></td></tr></table></figure>
-<p>在<strong>站点配置文件</strong>中添加配置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Security</span></span><br><span class="line">encrypt:</span><br><span class="line">  enable: true</span><br><span class="line">  abstract: 加密文档，请提升权限（要办卡吗这位朋友~）</span><br><span class="line">  message: 点我输入密码~</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  theme: xray</span><br><span class="line">  wrong_pass_message: 密码不太对, 还差一点</span><br><span class="line">  wrong_hash_message: 没有校验, 勉强开放好了  </span><br></pre></td></tr></table></figure>
-<h3 id="首页文章显示长度"><a href="#首页文章显示长度" class="headerlink" title="首页文章显示长度"></a>首页文章显示长度</h3><p>​    自 7.6.0 版本开始，<code>auto_excerpt</code> 功能被移除，推荐通过 <code>&lt;!-- more --&gt;</code> 来精确控制 Read More 的位置；或者设置 <code>excerpt_description</code> 然后为每篇文章指定 <code>description</code>。</p>
-<h3 id="back2top标签"><a href="#back2top标签" class="headerlink" title="back2top标签"></a>back2top标签</h3><p>​    安装插件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cake-moon-menu --save</span><br></pre></td></tr></table></figure>
-<p>​    站点配置文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">moon_menu:</span><br><span class="line">  back2top:</span><br><span class="line">    enable: true</span><br><span class="line">    icon: fa fa-chevron-up</span><br><span class="line">    func: back2top</span><br><span class="line">    order: -1</span><br><span class="line">  back2bottom:</span><br><span class="line">    enable: true</span><br><span class="line">    icon: fa fa-chevron-down</span><br><span class="line">    func: back2bottom</span><br><span class="line">    order: -2</span><br></pre></td></tr></table></figure>
-<h3 id="图片弹出"><a href="#图片弹出" class="headerlink" title="图片弹出"></a>图片弹出</h3><p>将文章里的图片弹出显示，使用的是<a href="https://github.com/theme-next/theme-next-fancybox3">fancybox3</a></p>
-<p>安装到路径<code>themes/next/source/lib</code>下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-fancybox3 fancybox</span><br></pre></td></tr></table></figure>
-<p>然后在主题配置文件中设置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
-<p>如果需要使用CDN加速：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vendors:</span><br><span class="line">  jquery: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@3&#x2F;dist&#x2F;jquery.min.js</span><br><span class="line">  fancybox: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;fancyapps&#x2F;fancybox@3&#x2F;dist&#x2F;jquery.fancybox.min.js</span><br><span class="line">  fancybox_css: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;fancyapps&#x2F;fancybox@3&#x2F;dist&#x2F;jquery.fancybox.min.css </span><br></pre></td></tr></table></figure>
-<p>更新：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd themes&#x2F;next&#x2F;source&#x2F;lib&#x2F;fancybox</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3><p>翻到图片的时候再加载，而不是刷新就将本页面的所有图片加载完</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
-<p>站点配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: &#x2F;images&#x2F;loading.png</span><br></pre></td></tr></table></figure>
-<p>onlypost：是否仅文章中的图片做懒加载,  为false则主题中的其他图片 如头像, logo 等, 也会做懒加载</p>
-<h3 id="优化文章url地址"><a href="#优化文章url地址" class="headerlink" title="优化文章url地址"></a>优化文章url地址</h3><p>有中文的链接经常会乱码，因此决定使用插件hexo-abbrlink，将原来的URL地址重新进行进制转换和再编码</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p>在站点配置文件中配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">permalink: posts&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">abbrlink: </span><br><span class="line">  alg: crc32 # 算法：crc16(default) and crc32 </span><br><span class="line">  rep: hex # 进制：dec(default) and hex</span><br></pre></td></tr></table></figure>
-<p>如果同时使用了插件hexo-asset-image和hexo-abbrlink而生成了冲突，详见<a href="http://localhost:4000/posts/e6e4b7aa/">冲突解决办法</a></p>
-<h3 id="超链接样式自定义"><a href="#超链接样式自定义" class="headerlink" title="超链接样式自定义"></a>超链接样式自定义</h3><p>在自定义样式文件<code>hexo/source/_data/styles.styl</code>中设置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 超链接样式</span><br><span class="line">.post-content a &#123; </span><br><span class="line">    color: rgb(30, 144, 255)</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">      color: rgb(30, 144, 255);</span><br><span class="line">      &#x2F;&#x2F;border-bottom-color: rgb(80, 115, 184);</span><br><span class="line">      text-decoration: underline;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><p><font color="blue"><a href>Hexo-NexT主题配置</a></font></p>
-<p><font color="blue"><a href="https://tding.top/archives/2bd6d82.html">Hexo-NexT 版本更新记录</a></font></p>
-<p><font color="blue">NexT官方文档</font></p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT主题添加Twikoo评论系统</title>
-    <url>/posts/43436/</url>
-    <content><![CDATA[<p><font color="red">NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！</font></p>
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th align="left">年份</th>
-<th>仓库</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>v5.1.4 或更低</td>
-<td align="left">2014 ~ 2017</td>
-<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
-</tr>
-<tr>
-<td>v6.0.0 ~ v7.8.0</td>
-<td align="left">2018 ~ 2019</td>
-<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
-</tr>
-<tr>
-<td>v8.0.0 或更高</td>
-<td align="left">2020</td>
-<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
-</tr>
-</tbody></table>
-<a id="more"></a>
-
-<h4 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h4><p>​    Next版本7.8.0，想要引入Twikoo评论系统，但是按照官方文档的步骤走完之后，并不能直接成功，反而提示渲染出错。加入了官方群之后，群里的大佬和iMaeGoo_虹墨大佬给了解决办法（好感动，爱了爱了），先升级版本，NexT v8以上的版本可以正常使用Twikoo。</p>
-<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613790670277.png" alt="1613790670277"></p>
-<p>由于Twikoo评论系统暂时不兼容v7.8.0（2021-2-19），所以决定先更新NexT主题，这时候就发现我使用的是旧仓库了，因为最新的版本是</p>
-<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613790444876.png" alt="1613790444876"></p>
-<p>因此我一直以为v7.8.0是最新版本，直到虹墨大佬说他测过是支持NexT v8.2.1版本时，才发现拉错了仓库(ㄒoㄒ)</p>
-<h4 id="引入Twikoo评论系统"><a href="#引入Twikoo评论系统" class="headerlink" title="引入Twikoo评论系统"></a>引入Twikoo评论系统</h4><p>​    有疑问多查看<font color="blue">Twikoo官方文档</font>。</p>
-<p>本博客引入Twikoo的步骤：</p>
 <ul>
-<li>手动部署云函数</li>
-</ul>
-<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613791557756.png" alt="1613791557756"></p>
+<li><p>PicGo</p>
+<p><a href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0">PicGo下载地址</a>选择最新的2.3.0下载，我是Windows系统，选择x64.exe版本</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027094143934.png" alt="【PicGo】下载"></p>
+<p>​    PicGo的默认图床里没有Gitee，需要安装插件。下载安装完成后，打开PicGo插件设置搜索Gitee，选择gitee-uploader安装</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027094630259.png" alt="【PicGo】插件设置"></p>
+<p>安装好了之后，在图床设置里就能看到Gitee了，设置如下：</p>
 <ul>
-<li>安装Twikoo依赖并添加配置</li>
-</ul>
-<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613791647448.png" alt="1613791647448"></p>
-<h4 id="管理及优化"><a href="#管理及优化" class="headerlink" title="管理及优化"></a>管理及优化</h4><ul>
-<li><p>开启管理面板</p>
-<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613810108473.png" alt="1613810108473"></p>
+<li><p>repo：存放的是仓库地址，eg:<code>owner/repoName</code>，注意仓库大小写</p>
+</li>
+<li><p>branch：分支，默认master</p>
+</li>
+<li><p>token：私人令牌</p>
+</li>
+<li><p>path：文件路径，eg: <code>img/$customPath</code>，$customPath为占位符</p>
+</li>
+<li><p>customPath：自动配置路径</p>
+</li>
+<li><p>customUrl：用来代替 <code>https://gitee.com/:owner/:repo/raw/:path/:filename</code>(默认配置路径), eg:<code>$&#123;customUrl&#125;/path/filename.jpg</code></p>
 </li>
 </ul>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><font color="blue">Twikoo官方文档&lt;/font</font></p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211027133231135.png" alt="【PicGo】gitee设置"></p>
+</li>
+<li><p>Typora</p>
+<p>Typora更新至<a href="https://www.typora.io/">最新版本</a>，打开偏好设置-图像，设置如下：</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103103266.png" alt="Typora偏好设置"></p>
+<p>完成设置后，点击验证图片上传选项进行测试</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103312853.png" alt="图片上传测试"></p>
+<p>若图片测试失败，检查PicGo设置下的Server监听端口是否为36677，确定PicGo上传功能正常再检查Typora设置。</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103406478.png" alt="server设置">    <img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103834888.png" alt="PicGo图片上传"></p>
+</li>
+</ul>
+<h4 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h4><p>​    markdown文档写完以后，可以选择将整篇文档的图片一起上传，也可以单张图片上传</p>
+<ul>
+<li><p>单张图片上传：右键单击图片，选择上传图片</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211101164804792.png" alt="上传单张图片"></p>
+</li>
+<li><p>整篇文档的图片一起上传：格式-图像-上传所有本地图片</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027104558843.png" alt="上传所有本地图片"></p>
+</li>
+</ul>
+<p>上传成功后图片的路径变为网络地址，图片就能相对长久且稳定的显示了。</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211027113624918.png" alt="pic"></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="https://support.typora.io/Images/#upload-images-to-cloud-server">Typora相关文档</a></p>
+<p><a href="https://picgo.github.io/PicGo-Doc/zh/guide/getting-started.html">PicGo相关文档</a></p>
 ]]></content>
-      <tags>
-        <tag>NexT</tag>
-        <tag>Twikoo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤</title>
-    <url>/posts/b2bf1dca/</url>
-    <content><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog.">
-    <label for="pass">Please enter the password to read the blog.</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>iframe</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT版本更新记录7.8.0 - 8.2.1</title>
-    <url>/posts/58272/</url>
-    <content><![CDATA[<p>由于可抗力（Twikoo真香！）因素，搭建博客不到一个月，决定更新主题版本。</p>
-<p>版本7.8.0到版本8.2.1最明显的区别，应该就在仓库上了，主题NexT的GIT存储库更改。</p>
-<a id="more"></a>
-
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th align="left">年份</th>
-<th>仓库</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>v5.1.4 或更低</td>
-<td align="left">2014 ~ 2017</td>
-<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
-</tr>
-<tr>
-<td>v6.0.0 ~ v7.8.0</td>
-<td align="left">2018 ~ 2019</td>
-<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
-</tr>
-<tr>
-<td>v8.0.0 或更高</td>
-<td align="left">2020</td>
-<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
-</tr>
-</tbody></table>
-<h4 id="保存旧版本"><a href="#保存旧版本" class="headerlink" title="保存旧版本"></a>保存旧版本</h4><p>​    备份NexT文件，尤其是两个配置文件，即 <code>hexo/_config.yml</code> 和 <code>hexo/themes/next/_config.yml</code></p>
-<h4 id="升级新版本"><a href="#升级新版本" class="headerlink" title="升级新版本"></a>升级新版本</h4><p>​    获取最新更新，执行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-<p>​    若是Hexo v5.0及以上，执行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<p>v7.8.0时，本博客在<code>hexo/source/_data/next.yml</code>里修改配置，在个性化设置里</p>
-<p>更新到v8.2.1后，在<code>next/_config.yml</code>下设置override: false会报WARN，用<code>_config.next.yml</code>文件代替。</p>
-<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802227726.png"></p>
-<p>将<code>next.yml</code>文件剪切并重命名为<code>_config.next.yml</code>。</p>
-<p>这时重启localhost，会有一些未转码的字符</p>
-<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802658053.png"></p>
-<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802668829.png"></p>
-<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613807104322.png"></p>
-<h4 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h4><p>​    将这些自定义的配置进行修改，或者将没必要的删除。使用swig 的语法写过的自定义内容如果报错，且生成的页面为空白，是因为NexT从v7.4.2开始使用 Nunjucks 代替 swig 作为模版引擎，而Nunjucks 只支持 <code>and</code> 运算符，需要替换掉 swig 中的 <code>&amp;&amp;</code>。</p>
-<blockquote>
-<p>​    Hexo 5.0 版本移除了对于 swig 模版的支持，改为独立的 hexo-renderer-swig 插件。如果使用旧版本的 NexT，并发现 Hexo 生成的 html 中输出了模版源码，不想改模板的话可以选择升级 NexT 或降级 Hexo。</p>
-</blockquote>
-<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613808001607.png"></p>
-<p>比如<code>source/_data/body_end.swig</code>文件里，设置了</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% if theme.cursor_effect &#x3D;&#x3D; &quot;fireworks&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;fireworks.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;explosion&quot; %&#125;</span><br><span class="line">  &lt;canvas class&#x3D;&quot;fireworks&quot; style&#x3D;&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;&#x2F;canvas&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;animejs&#x2F;2.2.0&#x2F;anime.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;explosion.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;love&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;love.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;text&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;text.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# 打字特效 #&#125;</span><br><span class="line">&#123;% if theme.typing_effect %&#125;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;js&#x2F;activate-power-mode.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    POWERMODE.colorful &#x3D; &#123;&#123; theme.typing_effect.colorful &#125;&#125;;</span><br><span class="line">    POWERMODE.shake &#x3D; &#123;&#123; theme.typing_effect.shake &#125;&#125;;</span><br><span class="line">    document.body.addEventListener(&#39;input&#39;, POWERMODE);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# 代码压缩 #&#125;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;js&#x2F;fold_action.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>更新后，选择将其他代码注释，留下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;canvas class&#x3D;&quot;fireworks&quot; style&#x3D;&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;&#x2F;canvas&gt;</span><br><span class="line"> &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;animejs&#x2F;2.2.0&#x2F;anime.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;explosion.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><font color="blue"><a href="https://zhuanlan.zhihu.com/p/163830894">Hexo 和 Next 主题升级</a></font></p>
-<p><font color="blue"><a href="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next.html">升级 Hexo 和 NexT 主题</a></font></p>
-<p><font color="blue"><a href="https://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">个性化设置</a></font></p>
-]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
-    <url>/posts/b692fe48/</url>
-    <content><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。<br>而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。</p>
-<a id="more"></a>
-
-<p>在git上有关于这个的提问 <a href="https://www.csdn.net/">link</a>.<a href="https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52">https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52</a><br>若依大佬简单说了解决办法，在此进行详细的补充<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150229579.png"></p>
-<h5 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h5><p>从startPage()点进去<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150634649.png"><br>这里的pageNum和pageSize是从前端数据里传进来的分页对象的属性<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150857124.png"><br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150835440.png"><br>然后对数据进行处理，当固定每页10条数据时：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableDataInfo <span class="title">list</span><span class="params">(TestDto testDto)</span> </span>&#123;</span><br><span class="line">       PageDomain pageDomain = TableSupport.buildPageRequest();</span><br><span class="line">       Integer pageNum = pageDomain.getPageNum();</span><br><span class="line">       Integer pageSize = pageDomain.getPageSize();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取到处理好的list集合</span></span><br><span class="line">       List&lt;TestDto&gt; result= sysTestService.selectSysTestList(testDto);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> num = result.size();</span><br><span class="line">       result = result.stream()</span><br><span class="line">       		.skip((pageNum - <span class="number">1</span>) * pageSize)</span><br><span class="line">       		.limit(pageSize)</span><br><span class="line">       		.collect(Collectors.toList());</span><br><span class="line">       TableDataInfo rspData = <span class="keyword">new</span> TableDataInfo();</span><br><span class="line">       rspData.setCode(HttpStatus.SUCCESS);</span><br><span class="line">       rspData.setRows(result);</span><br><span class="line">       rspData.setTotal(num);</span><br><span class="line">       <span class="keyword">return</span> rspData;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>springBoot</tag>
-      </tags>
   </entry>
   <entry>
     <title>SpringBoot-Vue第三方统一认证接口——调用与对接总结</title>
@@ -385,63 +191,257 @@ U2FsdGVkX1/AMqLqOIHjZvTpPGd/gj5VEj/az3VL+QjJYDTCgSi4dqbeNNPl9fSCocuc7UZNthfz/OKx
       </tags>
   </entry>
   <entry>
-    <title>【PicGo+Typora+Gitee】markdown图片上传并获取网络地址</title>
-    <url>/posts/fb1f1bf6/</url>
-    <content><![CDATA[<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
-<li><p>Gitee</p>
-<p>新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027102140541.png" alt="新建仓库"></p>
+    <title>NexT版本更新记录7.8.0 - 8.2.1</title>
+    <url>/posts/58272/</url>
+    <content><![CDATA[<p>由于可抗力（Twikoo真香！）因素，搭建博客不到一个月，决定更新主题版本。</p>
+<p>版本7.8.0到版本8.2.1最明显的区别，应该就在仓库上了，主题NexT的GIT存储库更改。</p>
 <a id="more"></a>
 
-<p>获取私人令牌token，复制并保存好令牌，下面PicGo设置时需要用到</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027102647981.png" alt="获取token"></p>
-</li>
-</ul>
-<ul>
-<li><p>PicGo</p>
-<p><a href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0">PicGo下载地址</a>选择最新的2.3.0下载，我是Windows系统，选择x64.exe版本</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027094143934.png" alt="【PicGo】下载"></p>
-<p>​    PicGo的默认图床里没有Gitee，需要安装插件。下载安装完成后，打开PicGo插件设置搜索Gitee，选择gitee-uploader安装</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027094630259.png" alt="【PicGo】插件设置"></p>
-<p>安装好了之后，在图床设置里就能看到Gitee了，设置如下：</p>
-<ul>
-<li><p>repo：存放的是仓库地址，eg:<code>owner/repoName</code>，注意仓库大小写</p>
-</li>
-<li><p>branch：分支，默认master</p>
-</li>
-<li><p>token：私人令牌</p>
-</li>
-<li><p>path：文件路径，eg: <code>img/$customPath</code>，$customPath为占位符</p>
-</li>
-<li><p>customPath：自动配置路径</p>
-</li>
-<li><p>customUrl：用来代替 <code>https://gitee.com/:owner/:repo/raw/:path/:filename</code>(默认配置路径), eg:<code>$&#123;customUrl&#125;/path/filename.jpg</code></p>
-</li>
-</ul>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211027133231135.png" alt="【PicGo】gitee设置"></p>
-</li>
-<li><p>Typora</p>
-<p>Typora更新至<a href="https://www.typora.io/">最新版本</a>，打开偏好设置-图像，设置如下：</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103103266.png" alt="Typora偏好设置"></p>
-<p>完成设置后，点击验证图片上传选项进行测试</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103312853.png" alt="图片上传测试"></p>
-<p>若图片测试失败，检查PicGo设置下的Server监听端口是否为36677，确定PicGo上传功能正常再检查Typora设置。</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103406478.png" alt="server设置">    <img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027103834888.png" alt="PicGo图片上传"></p>
-</li>
-</ul>
-<h4 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h4><p>​    markdown文档写完以后，可以选择将整篇文档的图片一起上传，也可以单张图片上传</p>
-<ul>
-<li><p>单张图片上传：右键单击图片，选择上传图片</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211101164804792.png" alt="上传单张图片"></p>
-</li>
-<li><p>整篇文档的图片一起上传：格式-图像-上传所有本地图片</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027104558843.png" alt="上传所有本地图片"></p>
-</li>
-</ul>
-<p>上传成功后图片的路径变为网络地址，图片就能相对长久且稳定的显示了。</p>
-<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/image-20211027113624918.png" alt="pic"></p>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="https://support.typora.io/Images/#upload-images-to-cloud-server">Typora相关文档</a></p>
-<p><a href="https://picgo.github.io/PicGo-Doc/zh/guide/getting-started.html">PicGo相关文档</a></p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th align="left">年份</th>
+<th>仓库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v5.1.4 或更低</td>
+<td align="left">2014 ~ 2017</td>
+<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v6.0.0 ~ v7.8.0</td>
+<td align="left">2018 ~ 2019</td>
+<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v8.0.0 或更高</td>
+<td align="left">2020</td>
+<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
+</tr>
+</tbody></table>
+<h4 id="保存旧版本"><a href="#保存旧版本" class="headerlink" title="保存旧版本"></a>保存旧版本</h4><p>​    备份NexT文件，尤其是两个配置文件，即 <code>hexo/_config.yml</code> 和 <code>hexo/themes/next/_config.yml</code></p>
+<h4 id="升级新版本"><a href="#升级新版本" class="headerlink" title="升级新版本"></a>升级新版本</h4><p>​    获取最新更新，执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p>​    若是Hexo v5.0及以上，执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<p>v7.8.0时，本博客在<code>hexo/source/_data/next.yml</code>里修改配置，在个性化设置里</p>
+<p>更新到v8.2.1后，在<code>next/_config.yml</code>下设置override: false会报WARN，用<code>_config.next.yml</code>文件代替。</p>
+<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802227726.png"></p>
+<p>将<code>next.yml</code>文件剪切并重命名为<code>_config.next.yml</code>。</p>
+<p>这时重启localhost，会有一些未转码的字符</p>
+<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802658053.png"></p>
+<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613802668829.png"></p>
+<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613807104322.png"></p>
+<h4 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h4><p>​    将这些自定义的配置进行修改，或者将没必要的删除。使用swig 的语法写过的自定义内容如果报错，且生成的页面为空白，是因为NexT从v7.4.2开始使用 Nunjucks 代替 swig 作为模版引擎，而Nunjucks 只支持 <code>and</code> 运算符，需要替换掉 swig 中的 <code>&amp;&amp;</code>。</p>
+<blockquote>
+<p>​    Hexo 5.0 版本移除了对于 swig 模版的支持，改为独立的 hexo-renderer-swig 插件。如果使用旧版本的 NexT，并发现 Hexo 生成的 html 中输出了模版源码，不想改模板的话可以选择升级 NexT 或降级 Hexo。</p>
+</blockquote>
+<p><img src="/NexT%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%957-8-0-8-2-1/1613808001607.png"></p>
+<p>比如<code>source/_data/body_end.swig</code>文件里，设置了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% if theme.cursor_effect &#x3D;&#x3D; &quot;fireworks&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;fireworks.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;explosion&quot; %&#125;</span><br><span class="line">  &lt;canvas class&#x3D;&quot;fireworks&quot; style&#x3D;&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;&#x2F;canvas&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;animejs&#x2F;2.2.0&#x2F;anime.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;explosion.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;love&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;love.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect &#x3D;&#x3D; &quot;text&quot; %&#125;</span><br><span class="line">  &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;text.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# 打字特效 #&#125;</span><br><span class="line">&#123;% if theme.typing_effect %&#125;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;js&#x2F;activate-power-mode.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    POWERMODE.colorful &#x3D; &#123;&#123; theme.typing_effect.colorful &#125;&#125;;</span><br><span class="line">    POWERMODE.shake &#x3D; &#123;&#123; theme.typing_effect.shake &#125;&#125;;</span><br><span class="line">    document.body.addEventListener(&#39;input&#39;, POWERMODE);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# 代码压缩 #&#125;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;js&#x2F;fold_action.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>更新后，选择将其他代码注释，留下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;canvas class&#x3D;&quot;fireworks&quot; style&#x3D;&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;&#x2F;canvas&gt;</span><br><span class="line"> &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;animejs&#x2F;2.2.0&#x2F;anime.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;script async src&#x3D;&quot;&#x2F;js&#x2F;explosion.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><font color="blue"><a href="https://zhuanlan.zhihu.com/p/163830894">Hexo 和 Next 主题升级</a></font></p>
+<p><font color="blue"><a href="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next.html">升级 Hexo 和 NexT 主题</a></font></p>
+<p><font color="blue"><a href="https://jmuava.gitee.io/2021/02/05/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">个性化设置</a></font></p>
 ]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT主题添加Twikoo评论系统</title>
+    <url>/posts/43436/</url>
+    <content><![CDATA[<p><font color="red">NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！</font></p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th align="left">年份</th>
+<th>仓库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v5.1.4 或更低</td>
+<td align="left">2014 ~ 2017</td>
+<td><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v6.0.0 ~ v7.8.0</td>
+<td align="left">2018 ~ 2019</td>
+<td><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v8.0.0 或更高</td>
+<td align="left">2020</td>
+<td><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+<h4 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h4><p>​    Next版本7.8.0，想要引入Twikoo评论系统，但是按照官方文档的步骤走完之后，并不能直接成功，反而提示渲染出错。加入了官方群之后，群里的大佬和iMaeGoo_虹墨大佬给了解决办法（好感动，爱了爱了），先升级版本，NexT v8以上的版本可以正常使用Twikoo。</p>
+<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613790670277.png" alt="1613790670277"></p>
+<p>由于Twikoo评论系统暂时不兼容v7.8.0（2021-2-19），所以决定先更新NexT主题，这时候就发现我使用的是旧仓库了，因为最新的版本是</p>
+<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613790444876.png" alt="1613790444876"></p>
+<p>因此我一直以为v7.8.0是最新版本，直到虹墨大佬说他测过是支持NexT v8.2.1版本时，才发现拉错了仓库(ㄒoㄒ)</p>
+<h4 id="引入Twikoo评论系统"><a href="#引入Twikoo评论系统" class="headerlink" title="引入Twikoo评论系统"></a>引入Twikoo评论系统</h4><p>​    有疑问多查看<font color="blue">Twikoo官方文档</font>。</p>
+<p>本博客引入Twikoo的步骤：</p>
+<ul>
+<li>手动部署云函数</li>
+</ul>
+<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613791557756.png" alt="1613791557756"></p>
+<ul>
+<li>安装Twikoo依赖并添加配置</li>
+</ul>
+<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613791647448.png" alt="1613791647448"></p>
+<h4 id="管理及优化"><a href="#管理及优化" class="headerlink" title="管理及优化"></a>管理及优化</h4><ul>
+<li><p>开启管理面板</p>
+<p><img src="/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/1613810108473.png" alt="1613810108473"></p>
+</li>
+</ul>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><font color="blue">Twikoo官方文档&lt;/font</font></p>
+]]></content>
+      <tags>
+        <tag>NexT</tag>
+        <tag>Twikoo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+NexT 博客个性化配置</title>
+    <url>/posts/32997/</url>
+    <content><![CDATA[<p>版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)</p>
+<p>本博客某些部分基于以下配置生效，防止更新丢失，在此做个记录。</p>
+<a id="more"></a>
+
+
+
+<p><font color="red"><strong>在配置文件里修改前，最好检查下其中是否有存在要修改的同名配置。 如果存在，将两者配置在一起。</strong></font></p>
+<blockquote>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
+</blockquote>
+<h3 id="NexT主题版本更新"><a href="#NexT主题版本更新" class="headerlink" title="NexT主题版本更新"></a><font color="red">NexT主题版本更新</font></h3><p>​    本博客搭建的时候使用的NexT版本是7.8.0，在美化主题的时候发现有些教程里的路径如<code>hexo/themes/next/source/css/_custom/custom.styl</code> 是没有的，官方在7.3.0版本更新时推荐采用数据文件，将主题与配置分离，即自定义布局、样式、自定义配置等的代码与主题文件分离。</p>
+<ul>
+<li><p>将主题配置修改放在<code>hexo/source/_data/next.yml</code>里（_data文件与_post文件同级,没有的话就新建目录，前提是确保NexT版本更新到7.3.0及以上)，这样就不用去修改<code>hexo/themes/next/_config.yml</code>文件，等到NexT再次更新的时候，一些自定义配置就不会因NexT升级而消失，尽量做到平滑升级。</p>
+<ol>
+<li>在 <code>hexo/source/_data</code> 中新建 <code>next.yml</code> 文件</li>
+<li>将 <code>next.yml</code> 中的属性 <code>override</code> 设置为 true</li>
+<li>将所有 NexT 主题选项从主题配置文件<code>NexT/_config.yml</code>复制到 <code>hexo/source/_data/next.yml</code> 中</li>
+</ol>
+</li>
+<li><p>将代码放入<code>hexo/source/_data</code>文件夹下，原 <code>hexo/themes/next/source/css/_custom/custom.styl</code> 的配置，现在都放在了<code>hexo/source/_data/styles.styl</code>里，在 NexT 的配置文件 <code>next.yml</code> 中取消 <code>styles.styl</code> 的注释。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line"></span><br><span class="line">-  <span class="comment">#style: source/_data/styles.styl</span></span><br><span class="line">+  style: source/_data/styles.styl <span class="comment">#将style前的#去掉</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题颜色"><a href="#主题颜色" class="headerlink" title="主题颜色"></a>主题颜色</h3><p>​    在<code>source/_data</code>目录下的<font color="red"> variables.styl</font>（没有则新增），修改主题颜色。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Colors</span></span><br><span class="line"><span class="comment">// colors for use across theme.</span></span><br><span class="line"><span class="comment">// --------------------------------------------------</span></span><br><span class="line">$black-deep   = #02394e;  //修改主题的颜色</span><br></pre></td></tr></table></figure>
+<p>​    还有一些其他的设定可以修改颜色，需要的话可以自行修改。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">$whitesmoke   = #f5f5f5;</span><br><span class="line">$gainsboro    = #eee;  //这个是边栏头像外框的颜色，</span><br><span class="line">$grey-lighter = #ddd;  //文章中插入图片边框颜色</span><br><span class="line">$grey-light   = #ccc;  //文章之间分割线、下划线颜色</span><br><span class="line">$grey         = #bbb;  //页面选中圆点颜色</span><br><span class="line">$grey-dark    = #999;</span><br><span class="line">$grey-dim     = #666;  //侧边栏目录字体颜色</span><br><span class="line">$black-light  = #555;  //修改文章字体颜色</span><br><span class="line">$black-dim    = #333;</span><br><span class="line">$black-deep   = #02394e;  //修改主题的颜色</span><br><span class="line">$red          = #ff2a2a;</span><br><span class="line">$blue-bright  = #87daff;</span><br><span class="line">$blue         = #0684bd;</span><br><span class="line">$blue-deep    = #262a30;</span><br><span class="line">$orange       = #fc6423;   //浏览文章时，目录选中的颜色</span><br></pre></td></tr></table></figure>
+<h3 id="界面样式"><a href="#界面样式" class="headerlink" title="界面样式"></a>界面样式</h3><p>​    修改界面显示的样式,设置位置、背景、显示等。</p>
+<p>如不想要这条灰线</p>
+<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614145911122.png"></p>
+<p>按F12定位到样式的设定位置</p>
+<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614145999390.png"></p>
+<p>这条灰线是由于post-footer里没有内容，而post-eof的默认背景是灰色而显示出来的，于是在<code>hexo/source/_data/styles.styl</code>文件里设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-eof&#123;</span><br><span class="line">  background: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/Hexo-Next-%E5%8D%9A%E5%AE%A2%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/1614146200662.png" alt="灰线没有了"></p>
+<h3 id="主题背景"><a href="#主题背景" class="headerlink" title="主题背景"></a>主题背景</h3><p>​    在<code>_data/styles.styl</code>里，修改背景图片。图片文件放在<code>blog/source/images</code>路径下。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//背景图片</span></span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/whale.jpg);</span><br><span class="line">    background-repeat: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-attachment:fixed; </span><br><span class="line">    background-size: cover;      <span class="comment">//填充</span></span><br><span class="line">    background-position:<span class="number">50</span>% <span class="number">50</span>%; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="设置圆角"><a href="#设置圆角" class="headerlink" title="设置圆角"></a>设置圆角</h3><p>给侧边栏和菜单栏以及文章部分设置圆角，在<code>_data/variables</code>里添加：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 圆角设置</span></span><br><span class="line">$border-radius-inner = 10px 10px 10px 10px;</span><br><span class="line">$border-radius = 10px;</span><br></pre></td></tr></table></figure>
+<p>菜单栏和文章的边框有圆角了，还差菜单下的侧边框。在<code>_data/styles.styl</code>里添加：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//侧边框</span></span><br><span class="line">.sidebar &#123;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义鼠标点击特效"><a href="#自定义鼠标点击特效" class="headerlink" title="自定义鼠标点击特效"></a>自定义鼠标点击特效</h3><p>​    网上的博客鼠标点击特效常见的有四种：<font color="red">fireworks | explosion | love | text</font></p>
+<p>将对应的js文件放到<code>hexo/source/js</code>，然后在<code>source/_data/next.yml</code>里设置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 鼠标点击特效</span></span><br><span class="line"><span class="comment"># mouse click effect: fireworks | explosion | love | text</span></span><br><span class="line">cursor_effect: explosion</span><br></pre></td></tr></table></figure>
+<p>由于本博客整体的颜色是蓝色调，为了贴合对点击特效进行了修改。</p>
+<p><font color="red">注意：这里颜色的字母要大写</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">function updateCoords(e) &#123;</span><br><span class="line">    pointerX = (e.clientX || e.touches[<span class="number">0</span>].clientX) - canvasEl.getBoundingClientRect().left,</span><br><span class="line">    pointerY = e.clientY || e.touches[<span class="number">0</span>].clientY - canvasEl.getBoundingClientRect().top</span><br><span class="line">&#125;</span><br><span class="line">function setParticuleDirection(e) &#123;</span><br><span class="line">    var t = anime.random(<span class="number">0</span>, <span class="number">360</span>) * Math.PI / <span class="number">180</span>,     //圆出现的角度</span><br><span class="line">    a = anime.random(<span class="number">50</span>, <span class="number">180</span>),</span><br><span class="line">    n = [ - <span class="number">1</span>, <span class="number">1</span>][anime.random(<span class="number">0</span>, <span class="number">1</span>)] * a;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        x: e.x + n * Math.cos(t),</span><br><span class="line">        y: e.y + n * Math.sin(t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function createParticule(e, t) &#123;</span><br><span class="line">    var a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.x = e,</span><br><span class="line">    a.y = t,</span><br><span class="line">    a.color = colors[anime.random(<span class="number">0</span>, colors.length - <span class="number">1</span>)],</span><br><span class="line">    a.radius = anime.random(<span class="number">16</span>, <span class="number">32</span>),</span><br><span class="line">    a.endPos = setParticuleDirection(a),</span><br><span class="line">    a.draw = function() &#123;</span><br><span class="line">        ctx.beginPath(),</span><br><span class="line">        ctx.arc(a.x, a.y, a.radius, <span class="number">0</span>, <span class="number">2</span> * Math.PI, !<span class="number">0</span>),</span><br><span class="line">        ctx.fillStyle = a.color,</span><br><span class="line">        ctx.fill()</span><br><span class="line">    &#125;,</span><br><span class="line">    a</span><br><span class="line">&#125;</span><br><span class="line">function createCircle(e, t) &#123;</span><br><span class="line">    var a = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.x = e,</span><br><span class="line">    a.y = t,</span><br><span class="line">    a.color = <span class="string">&quot;#1E92FB&quot;</span>,          //线圈的颜色</span><br><span class="line">    a.radius = <span class="number">.1</span>,</span><br><span class="line">    a.alpha = <span class="number">.5</span>,</span><br><span class="line">    a.lineWidth = <span class="number">3</span>,</span><br><span class="line">    a.draw = function() &#123;</span><br><span class="line">        ctx.globalAlpha = a.alpha,</span><br><span class="line">        ctx.beginPath(),</span><br><span class="line">        ctx.arc(a.x, a.y, a.radius, <span class="number">0</span>, <span class="number">2</span> * Math.PI, !<span class="number">0</span>),</span><br><span class="line">        ctx.lineWidth = a.lineWidth,</span><br><span class="line">        ctx.strokeStyle = a.color,</span><br><span class="line">        ctx.stroke(),</span><br><span class="line">        ctx.globalAlpha = <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    a</span><br><span class="line">&#125;</span><br><span class="line">function renderParticule(e) &#123;</span><br><span class="line">    <span class="keyword">for</span> (var t = <span class="number">0</span>; t &lt; e.animatables.length; t++) e.animatables[t].target.draw()</span><br><span class="line">&#125;</span><br><span class="line">function animateParticules(e, t) &#123;</span><br><span class="line">    <span class="keyword">for</span> (var a = createCircle(e, t), n = [], i = <span class="number">0</span>; i &lt; numberOfParticules; i++) n.push(createParticule(e, t));</span><br><span class="line">    anime.timeline().add(&#123;</span><br><span class="line">        targets: n,</span><br><span class="line">        x: function(e) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.endPos.x</span><br><span class="line">        &#125;,</span><br><span class="line">        y: function(e) &#123;</span><br><span class="line">            <span class="keyword">return</span> e.endPos.y</span><br><span class="line">        &#125;,</span><br><span class="line">        radius: <span class="number">.1</span>,</span><br><span class="line">        duration: anime.random(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        easing: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        update: renderParticule</span><br><span class="line">    &#125;).add(&#123;</span><br><span class="line">        targets: a,</span><br><span class="line">        radius: anime.random(<span class="number">80</span>, <span class="number">160</span>),</span><br><span class="line">        lineWidth: <span class="number">0</span>,</span><br><span class="line">        alpha: &#123;</span><br><span class="line">            value: <span class="number">0</span>,</span><br><span class="line">            easing: <span class="string">&quot;linear&quot;</span>,</span><br><span class="line">            duration: anime.random(<span class="number">600</span>, <span class="number">800</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        duration: anime.random(<span class="number">1200</span>, <span class="number">1800</span>),</span><br><span class="line">        easing: <span class="string">&quot;easeOutExpo&quot;</span>,</span><br><span class="line">        update: renderParticule,</span><br><span class="line">        offset: <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">function debounce(e, t) &#123;</span><br><span class="line">    var a;</span><br><span class="line">    <span class="keyword">return</span> function() &#123;</span><br><span class="line">        var n = this,</span><br><span class="line">        i = arguments;</span><br><span class="line">        clearTimeout(a),</span><br><span class="line">        a = setTimeout(function() &#123;</span><br><span class="line">            e.apply(n, i)</span><br><span class="line">        &#125;,</span><br><span class="line">        t)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var canvasEl = document.querySelector(<span class="string">&quot;.fireworks&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (canvasEl) &#123;</span><br><span class="line">    var ctx = canvasEl.getContext(<span class="string">&quot;2d&quot;</span>),</span><br><span class="line">    numberOfParticules = <span class="number">5</span>,   //点击的圆数量</span><br><span class="line">    pointerX = <span class="number">0</span>,</span><br><span class="line">    pointerY = <span class="number">0</span>,</span><br><span class="line">    tap = <span class="string">&quot;mousedown&quot;</span>,</span><br><span class="line">    colors = [<span class="string">&quot;#447C8C&quot;</span>, <span class="string">&quot;#024E66&quot;</span>, <span class="string">&quot;#387A91&quot;</span>, <span class="string">&quot;#86D8FF&quot;</span>, <span class="string">&quot;#DDEAEF&quot;</span>],//随机出现的颜色</span><br><span class="line">    setCanvasSize = debounce(function() &#123;</span><br><span class="line">        canvasEl.width = <span class="number">2</span> * window.innerWidth,</span><br><span class="line">        canvasEl.height = <span class="number">2</span> * window.innerHeight,</span><br><span class="line">        canvasEl.style.width = window.innerWidth + <span class="string">&quot;px&quot;</span>,</span><br><span class="line">        canvasEl.style.height = window.innerHeight + <span class="string">&quot;px&quot;</span>,</span><br><span class="line">        canvasEl.getContext(<span class="string">&quot;2d&quot;</span>).scale(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="number">500</span>),</span><br><span class="line">    render = anime(&#123;</span><br><span class="line">        duration: <span class="number">1</span> / <span class="number">0</span>,</span><br><span class="line">        update: function() &#123;</span><br><span class="line">            ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvasEl.width, canvasEl.height)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    document.addEventListener(tap,</span><br><span class="line">    function(e) &#123;</span><br><span class="line">        <span class="string">&quot;sidebar&quot;</span> !== e.target.<span class="built_in">id</span> &amp;&amp; <span class="string">&quot;toggle-sidebar&quot;</span> !== e.target.<span class="built_in">id</span> &amp;&amp; <span class="string">&quot;A&quot;</span> !== e.target.nodeName &amp;&amp; <span class="string">&quot;IMG&quot;</span> !== e.target.nodeName &amp;&amp; (render.play(), updateCoords(e), animateParticules(pointerX, pointerY))</span><br><span class="line">    &#125;,</span><br><span class="line">    !<span class="number">1</span>),</span><br><span class="line">    setCanvasSize(),</span><br><span class="line">    window.addEventListener(<span class="string">&quot;resize&quot;</span>, setCanvasSize, !<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="网页显示logo"><a href="#网页显示logo" class="headerlink" title="网页显示logo"></a>网页显示logo</h3><p>将图片放在<code>hexo/source/images</code>，将图片的名称改为 <font color="red">favicon.ico</font>，同时在<code>next.yml</code>里设置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Site Information Settings</span></span><br><span class="line"><span class="comment"># See: https://theme-NexT.org/docs/getting-started/</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">favicon:</span><br><span class="line">  small: /images/favicon.ico</span><br><span class="line">  medium: /images/favicon.ico</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-NexT.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br></pre></td></tr></table></figure>
+<h3 id="mac主题的代码块风格"><a href="#mac主题的代码块风格" class="headerlink" title="mac主题的代码块风格"></a>mac主题的代码块风格</h3><p>7.8.0版本的NexT主题已经支持mac风格的代码块设置，在<code>next.yml</code>搜索 <font color="red">codeblock</font> 设置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line"></span><br><span class="line">  highlight_theme: solarized dark <span class="comment">#支持以上八种主题，为了更加贴近背景，我选择了solarized dark</span></span><br><span class="line">        </span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true <span class="comment"># 增加复制按钮的开关</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: true<span class="comment"># 点击复制完后是否显示 复制成功 结果提示</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
+<h3 id="文章加密"><a href="#文章加密" class="headerlink" title="文章加密"></a>文章加密</h3><p>引入依赖：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt </span><br></pre></td></tr></table></figure>
+<p>在<strong>站点配置文件</strong>中添加配置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Security</span></span><br><span class="line">encrypt:</span><br><span class="line">  enable: true</span><br><span class="line">  abstract: 加密文档，请提升权限（要办卡吗这位朋友~）</span><br><span class="line">  message: 点我输入密码~</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  theme: xray</span><br><span class="line">  wrong_pass_message: 密码不太对, 还差一点</span><br><span class="line">  wrong_hash_message: 没有校验, 勉强开放好了  </span><br></pre></td></tr></table></figure>
+<h3 id="首页文章显示长度"><a href="#首页文章显示长度" class="headerlink" title="首页文章显示长度"></a>首页文章显示长度</h3><p>​    自 7.6.0 版本开始，<code>auto_excerpt</code> 功能被移除，推荐通过 <code>&lt;!-- more --&gt;</code> 来精确控制 Read More 的位置；或者设置 <code>excerpt_description</code> 然后为每篇文章指定 <code>description</code>。</p>
+<h3 id="back2top标签"><a href="#back2top标签" class="headerlink" title="back2top标签"></a>back2top标签</h3><p>​    安装插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cake-moon-menu --save</span><br></pre></td></tr></table></figure>
+<p>​    站点配置文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">moon_menu:</span><br><span class="line">  back2top:</span><br><span class="line">    enable: true</span><br><span class="line">    icon: fa fa-chevron-up</span><br><span class="line">    func: back2top</span><br><span class="line">    order: -1</span><br><span class="line">  back2bottom:</span><br><span class="line">    enable: true</span><br><span class="line">    icon: fa fa-chevron-down</span><br><span class="line">    func: back2bottom</span><br><span class="line">    order: -2</span><br></pre></td></tr></table></figure>
+<h3 id="图片弹出"><a href="#图片弹出" class="headerlink" title="图片弹出"></a>图片弹出</h3><p>将文章里的图片弹出显示，使用的是<a href="https://github.com/theme-next/theme-next-fancybox3">fancybox3</a></p>
+<p>安装到路径<code>themes/next/source/lib</code>下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-fancybox3 fancybox</span><br></pre></td></tr></table></figure>
+<p>然后在主题配置文件中设置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
+<p>如果需要使用CDN加速：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vendors:</span><br><span class="line">  jquery: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@3&#x2F;dist&#x2F;jquery.min.js</span><br><span class="line">  fancybox: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;fancyapps&#x2F;fancybox@3&#x2F;dist&#x2F;jquery.fancybox.min.js</span><br><span class="line">  fancybox_css: &#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;fancyapps&#x2F;fancybox@3&#x2F;dist&#x2F;jquery.fancybox.min.css </span><br></pre></td></tr></table></figure>
+<p>更新：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd themes&#x2F;next&#x2F;source&#x2F;lib&#x2F;fancybox</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3><p>翻到图片的时候再加载，而不是刷新就将本页面的所有图片加载完</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
+<p>站点配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: &#x2F;images&#x2F;loading.png</span><br></pre></td></tr></table></figure>
+<p>onlypost：是否仅文章中的图片做懒加载,  为false则主题中的其他图片 如头像, logo 等, 也会做懒加载</p>
+<h3 id="优化文章url地址"><a href="#优化文章url地址" class="headerlink" title="优化文章url地址"></a>优化文章url地址</h3><p>有中文的链接经常会乱码，因此决定使用插件hexo-abbrlink，将原来的URL地址重新进行进制转换和再编码</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件中配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">permalink: posts&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">abbrlink: </span><br><span class="line">  alg: crc32 # 算法：crc16(default) and crc32 </span><br><span class="line">  rep: hex # 进制：dec(default) and hex</span><br></pre></td></tr></table></figure>
+<p>如果同时使用了插件hexo-asset-image和hexo-abbrlink而生成了冲突，详见<a href="http://localhost:4000/posts/e6e4b7aa/">冲突解决办法</a></p>
+<h3 id="超链接样式自定义"><a href="#超链接样式自定义" class="headerlink" title="超链接样式自定义"></a>超链接样式自定义</h3><p>在自定义样式文件<code>hexo/source/_data/styles.styl</code>中设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 超链接样式</span><br><span class="line">.post-content a &#123; </span><br><span class="line">    color: rgb(30, 144, 255)</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">      color: rgb(30, 144, 255);</span><br><span class="line">      &#x2F;&#x2F;border-bottom-color: rgb(80, 115, 184);</span><br><span class="line">      text-decoration: underline;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><p><font color="blue"><a href>Hexo-NexT主题配置</a></font></p>
+<p><font color="blue"><a href="https://tding.top/archives/2bd6d82.html">Hexo-NexT 版本更新记录</a></font></p>
+<p><font color="blue">NexT官方文档</font></p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作</title>
+    <url>/posts/b692fe48/</url>
+    <content><![CDATA[<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。<br>而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。</p>
+<a id="more"></a>
+
+<p>在git上有关于这个的提问 <a href="https://www.csdn.net/">link</a>.<a href="https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52">https://gitee.com/y_project/RuoYi-Vue/issues/I1GI52</a><br>若依大佬简单说了解决办法，在此进行详细的补充<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150229579.png"></p>
+<h5 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h5><p>从startPage()点进去<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150634649.png"><br>这里的pageNum和pageSize是从前端数据里传进来的分页对象的属性<br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150857124.png"><br><img src="/RUOYI-Vue-SpringBoot-%E5%AF%B9%E6%8B%BC%E6%8E%A5%E7%9A%84list%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/20210121150835440.png"><br>然后对数据进行处理，当固定每页10条数据时：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableDataInfo <span class="title">list</span><span class="params">(TestDto testDto)</span> </span>&#123;</span><br><span class="line">       PageDomain pageDomain = TableSupport.buildPageRequest();</span><br><span class="line">       Integer pageNum = pageDomain.getPageNum();</span><br><span class="line">       Integer pageSize = pageDomain.getPageSize();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取到处理好的list集合</span></span><br><span class="line">       List&lt;TestDto&gt; result= sysTestService.selectSysTestList(testDto);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> num = result.size();</span><br><span class="line">       result = result.stream()</span><br><span class="line">       		.skip((pageNum - <span class="number">1</span>) * pageSize)</span><br><span class="line">       		.limit(pageSize)</span><br><span class="line">       		.collect(Collectors.toList());</span><br><span class="line">       TableDataInfo rspData = <span class="keyword">new</span> TableDataInfo();</span><br><span class="line">       rspData.setCode(HttpStatus.SUCCESS);</span><br><span class="line">       rspData.setRows(result);</span><br><span class="line">       rspData.setTotal(num);</span><br><span class="line">       <span class="keyword">return</span> rspData;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>springBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA里的vue项目iframe（HTML项目）同域连接步骤</title>
+    <url>/posts/b2bf1dca/</url>
+    <content><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog.">
+    <label for="pass">Please enter the password to read the blog.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>iframe</tag>
+        <tag>html</tag>
+      </tags>
   </entry>
 </search>

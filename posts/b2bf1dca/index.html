@@ -1,4 +1,652 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.3.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico"><link rel="mask-icon" href="/images/logo.svg" color="#222"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><script class="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:"jmuava.gitee.io",root:"/",images:"/images",scheme:"Gemini",version:"8.2.1",exturl:!1,sidebar:{position:"left",display:"post",padding:18,offset:12,onmobile:!1},copycode:!0,bookmark:{enable:!1,color:"#222",save:"auto"},fancybox:!0,mediumzoom:!1,lazyload:!1,pangu:!1,comments:{style:"tabs",active:null,storage:!0,lazyload:!1,nav:null},motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},prism:!1,i18n:{placeholder:"搜索...",empty:"没有找到任何搜索结果：${query}",hits_time:"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）",hits:"找到 ${hits} 个搜索结果"},path:"/search.xml",localsearch:{enable:!0,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1}}</script><meta name="description" content="The article has been encrypted, please enter your password to view."><meta property="og:type" content="article"><meta property="og:title" content="IDEA里的vue项目iframe（HTML项目）同域连接步骤"><meta property="og:url" content="http://jmuava.gitee.io/posts/b2bf1dca/index.html"><meta property="og:site_name" content="Ava&#39;s blog"><meta property="og:description" content="The article has been encrypted, please enter your password to view."><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2021-02-04T02:21:44.000Z"><meta property="article:modified_time" content="2021-11-01T10:10:54.984Z"><meta property="article:author" content="Ava"><meta property="article:tag" content="vue"><meta property="article:tag" content="iframe"><meta property="article:tag" content="html"><meta name="twitter:card" content="summary"><link rel="canonical" href="http://jmuava.gitee.io/posts/b2bf1dca/"><script class="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,lang:"zh-CN"}</script><title>IDEA里的vue项目iframe（HTML项目）同域连接步骤 | Ava's blog</title><noscript><style>body{margin-top:2rem}.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header,.use-motion .sidebar{visibility:visible}.use-motion .footer,.use-motion .header,.use-motion .site-brand-container .toggle{opacity:initial}.use-motion .custom-logo-image,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line{transform:scaleX(1)}.search-pop-overlay,.sidebar-nav{display:none}.sidebar-panel{display:block}</style></noscript><link rel="alternate" href="/atom.xml" title="Ava's blog" type="application/atom+xml"></head><body itemscope itemtype="http://schema.org/WebPage" class="use-motion"><div class="headband"></div><main class="main"><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏" role="button"><span class="toggle-line"></span> <span class="toggle-line"></span> <span class="toggle-line"></span></div></div><div class="site-meta"><a href="/" class="brand" rel="start"><i class="logo-line"></i><h1 class="site-title">Ava's blog</h1><i class="logo-line"></i></a><p class="site-subtitle" itemprop="description">keep study</p></div><div class="site-nav-right"><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class="site-nav"><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-search"><a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索</a></li></ul></nav><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-icon"><i class="fa fa-search"></i></span><div class="search-input-container"><input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close" role="button"><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class="search-result-icon"><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role="button"><span class="toggle-line"></span> <span class="toggle-line"></span> <span class="toggle-line"></span></div><aside class="sidebar"><div class="sidebar-inner sidebar-overview-active"><ul class="sidebar-nav"><li class="sidebar-nav-toc">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="sidebar-panel-container"><div class="post-toc-wrap sidebar-panel"></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" alt="Ava" src="/images/avatar.png"><p class="site-author-name" itemprop="name">Ava</p><div class="site-description" itemprop="description">一个记录的过程</div></div><div class="site-state-wrap site-overview-item animated"><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">8</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">8</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div><canvas id="canvas" style="width:60%">当前浏览器不支持canvas，请更换浏览器后再试</canvas></div><script>!function(){var o,a,r,f,t,i=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0]]],e=document.getElementById("canvas");function h(t,e){for(var n=[1,2,3],l=["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"],o=0;o<i[e].length;o++)for(var a,h=0;h<i[e][o].length;h++)1==i[e][o][h]&&(a={x:14*(f+2)*t+2*h*(f+1)+(f+1),y:2*o*(f+1)+(f+1),stepX:Math.floor(4*Math.random()-2),stepY:-2*n[Math.floor(Math.random()*n.length)],color:l[Math.floor(Math.random()*l.length)],disY:1},r.push(a))}function n(){e.height=100;for(var t=0;t<a.length;t++)!function(t,e){for(var n=0;n<i[e].length;n++)for(var l=0;l<i[e][n].length;l++)1==i[e][n][l]&&(o.beginPath(),o.arc(14*(f+2)*t+2*l*(f+1)+(f+1),2*n*(f+1)+(f+1),f,0,2*Math.PI),o.closePath(),o.fill())}(t,a[t]);for(t=0;t<r.length;t++)o.beginPath(),o.arc(r[t].x,r[t].y,f,0,2*Math.PI),o.fillStyle=r[t].color,o.closePath(),o.fill()}e.getContext&&(o=e.getContext("2d"),e.height=100,e.width=700,o.fillStyle="#f00",o.fillRect(10,10,50,50),a=[],r=[],f=e.height/20-1,t=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),a.push(t[1],t[2],10,t[3],t[4],10,t[5],t[6]),clearInterval(void 0),setInterval(function(){!function(){var t=[],e=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),n=[];n.push(e[1],e[2],10,e[3],e[4],10,e[5],e[6]);for(var l=a.length-1;0<=l;l--)n[l]!==a[l]&&t.push(l+"_"+(Number(a[l])+1)%10);for(l=0;l<t.length;l++)h.apply(this,t[l].split("_"));a=n.concat()}(),function(){for(var t=0;t<r.length;t++)r[t].stepY+=r[t].disY,r[t].x+=r[t].stepX,r[t].y+=r[t].stepY,(r[t].x>700+f||r[t].y>100+f)&&(r.splice(t,1),t--)}(),n()},50))}()</script></div></div></div></aside><div class="sidebar-dimmer"></div></header><noscript><div class="noscript-warning">Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class="post-block"><article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN"><link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/posts/b2bf1dca/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.png"><meta itemprop="name" content="Ava"><meta itemprop="description" content="一个记录的过程"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Ava's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">IDEA里的vue项目iframe（HTML项目）同域连接步骤</h1><div class="post-meta-container"><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2021-02-04 10:21:44" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar-check"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2021-11-01 18:10:54" itemprop="dateModified" datetime="2021-11-01T18:10:54+08:00">2021-11-01</time> </span><span id="/posts/b2bf1dca/" class="post-meta-item twikoo_visitors" data-flag-title="IDEA里的vue项目iframe（HTML项目）同域连接步骤" title="阅读次数"><span class="post-meta-item-icon"><i class="far fa-eye"></i> </span><span class="post-meta-item-text">阅读次数：</span> <span id="twikoo_visitors"></span></span></div><div class="post-meta"><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i> </span><span class="post-meta-item-text">本文字数：</span> <span>993</span> </span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span>1 分钟</span></span></div></div></header><div class="post-body" itemprop="articleBody"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security"><div class="hbe-input-container"><input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog."> <label for="pass">Please enter the password to read the blog.</label><div class="bottom-line"></div></div></div><div id="decryptionError" style="display:none">Incorrect Password!</div><div id="noContentError" style="display:none">No content to display!</div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css"></div><footer class="post-footer"><div class="post-copyright"><ul><li class="post-copyright-author"><strong>本文作者： </strong>Ava</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="http://jmuava.gitee.io/posts/b2bf1dca/" title="IDEA里的vue项目iframe（HTML项目）同域连接步骤">http://jmuava.gitee.io/posts/b2bf1dca/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class="post-tags"><a href="/tags/vue/" rel="tag"># vue</a> <a href="/tags/iframe/" rel="tag"># iframe</a> <a href="/tags/html/" rel="tag"># html</a></div><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a href="/posts/b692fe48/" rel="next" title="RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作">RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="comments"><div id="twikoo-comments"></div></div><script>window.addEventListener('tabs:register', () => {
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="在vue项目里使用iframe框架123&lt;div id&#x3D;&quot;middle&quot;&gt;  &lt;iframe id&#x3D;&quot;3diframe&quot; ref&#x3D;&quot;iframe&quot; :src&#x3D;&amp;#x27;src1&amp;#x27;  width&#x3D;&quot;730px&quot; height&#x3D;&quot;918px&quot; style&#x3D;&quot;bac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA里的vue项目iframe（HTML项目）同域连接步骤">
+<meta property="og:url" content="http://jmuava.gitee.io/posts/b2bf1dca/index.html">
+<meta property="og:site_name" content="Ava&#39;s blog">
+<meta property="og:description" content="在vue项目里使用iframe框架123&lt;div id&#x3D;&quot;middle&quot;&gt;  &lt;iframe id&#x3D;&quot;3diframe&quot; ref&#x3D;&quot;iframe&quot; :src&#x3D;&amp;#x27;src1&amp;#x27;  width&#x3D;&quot;730px&quot; height&#x3D;&quot;918px&quot; style&#x3D;&quot;bac">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729105652994.png">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729105916165.png">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729110653488.png">
+<meta property="article:published_time" content="2021-02-04T02:21:44.000Z">
+<meta property="article:modified_time" content="2021-11-02T08:19:05.287Z">
+<meta property="article:author" content="Ava">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="iframe">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729105652994.png">
+
+
+<link rel="canonical" href="http://jmuava.gitee.io/posts/b2bf1dca/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>IDEA里的vue项目iframe（HTML项目）同域连接步骤 | Ava's blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Ava's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ava's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">keep study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8vue%E9%A1%B9%E7%9B%AE%E9%87%8C%E4%BD%BF%E7%94%A8iframe%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">在vue项目里使用iframe框架</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8IDE%E7%9A%84vue%E9%A1%B9%E7%9B%AE%E9%87%8C%E8%AE%BE%E7%BD%AEproxy%E8%B7%AF%E5%BE%84%EF%BC%8C%E5%A6%82"><span class="nav-number">2.</span> <span class="nav-text">在IDE的vue项目里设置proxy路径，如</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8html%E9%A1%B9%E7%9B%AE%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text">在html项目里设置端口号</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ava"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Ava</p>
+  <div class="site-description" itemprop="description">一个记录的过程</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/posts/b2bf1dca/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Ava">
+      <meta itemprop="description" content="一个记录的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ava's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IDEA里的vue项目iframe（HTML项目）同域连接步骤
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-04 10:21:44" itemprop="dateCreated datePublished" datetime="2021-02-04T10:21:44+08:00">2021-02-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-02 16:19:05" itemprop="dateModified" datetime="2021-11-02T16:19:05+08:00">2021-11-02</time>
+      </span>
+
+  
+    <span id="/posts/b2bf1dca/" class="post-meta-item twikoo_visitors" data-flag-title="IDEA里的vue项目iframe（HTML项目）同域连接步骤" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="twikoo_visitors"></span>
+    </span>
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>993</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h5 id="在vue项目里使用iframe框架"><a href="#在vue项目里使用iframe框架" class="headerlink" title="在vue项目里使用iframe框架"></a>在vue项目里使用iframe框架</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;middle&quot;</span>&gt;</span><br><span class="line">  &lt;iframe id=&quot;3diframe&quot; ref=&quot;iframe&quot; :src=&#x27;src1&#x27;  width=&quot;730px&quot; height=&quot;918px&quot; style=&quot;background-color=transparent&quot; frameborder=&quot;0&quot; title=&quot;test&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>src既可以直接写进去当成静态使用，也可以写进script里动态改变</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">&#x27;control&#x27;</span>,</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">      src1:<span class="string">&quot;/map/indoor3D-master/Amap2.html&quot;</span>,</span><br><span class="line">      floor:undefined,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="在IDE的vue项目里设置proxy路径，如"><a href="#在IDE的vue项目里设置proxy路径，如" class="headerlink" title="在IDE的vue项目里设置proxy路径，如"></a>在IDE的vue项目里设置proxy路径，如</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  proxy: &#123;</span><br><span class="line">    <span class="string">&quot;/map&quot;</span>: &#123;</span><br><span class="line">      target: <span class="string">&quot;http://localhost:8080&quot;</span>, <span class="comment">// 本地模拟数据服务器</span></span><br><span class="line">      changeOrigin: <span class="keyword">true</span>,<span class="comment">//将选项changeOrigin设置true为基于名称的虚拟托管站点。</span></span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        <span class="string">&quot;^/map&quot;</span>: <span class="string">&quot;&quot;</span> <span class="comment">// 去掉接口地址中的api字符串,路径重写</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729105652994.png"><br>html的端口号和vue项目使用的端口号不能一致，否则会显示冲突，被占用<br>设置vue项目端口号<br><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729105916165.png"></p>
+<h5 id="在html项目里设置端口号"><a href="#在html项目里设置端口号" class="headerlink" title="在html项目里设置端口号"></a>在html项目里设置端口号</h5><p>IDEA的默认端口号是63342，而我们需要的是8080<br>手动设置：file-&gt;settings-&gt;build-&gt;debugger-&gt;build-in-server-&gt;port<br>同时勾选 Can accept external connections 和 Allow unsigned requests<br><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/20200729110653488.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ava
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jmuava.gitee.io/posts/b2bf1dca/" title="IDEA里的vue项目iframe（HTML项目）同域连接步骤">http://jmuava.gitee.io/posts/b2bf1dca/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/vue/" rel="tag"># vue</a>
+              <a href="/tags/iframe/" rel="tag"># iframe</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b692fe48/" rel="next" title="RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作">
+                  RUOYI-Vue-SpringBoot: 对拼接的list进行分页操作 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments"><div id="twikoo-comments"></div></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -16,4 +664,94 @@
       const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
-  }</script></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2021</span> <span class="with-love"><i class="fa fa-fish"></i> </span><span class="author" itemprop="copyrightHolder">Ava</span></div><div class="wordcount"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-chart-line"></i> </span><span title="站点总字数">24k</span> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-coffee"></i> </span><span title="站点阅读时长">21 分钟</span></span></div></div></footer><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/local-search.js"></script><script>NexT.utils.loadComments("#twikoo-comments",()=>{NexT.utils.getScript("https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js",()=>{twikoo.init(Object.assign({enable:!0,visitor:!0,envId:"jmuava-0gg6qwdp2f8dd251"},{el:"#twikoo-comments"}))},window.twikoo)})</script><canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:1;pointer-events:none"></canvas><script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script async src="/js/explosion.min.js"></script><script type="text/javascript" src="/js/fold_action.js"></script><div class="moon-menu"><div class="moon-menu-items"><div class="moon-menu-item" onclick="back2bottom()"><i class="fa fa-chevron-down"></i></div><div class="moon-menu-item" onclick="back2top()"><i class="fa fa-chevron-up"></i></div></div><div class="moon-menu-button"><svg class="moon-menu-bg"><circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle><circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle></svg><div class="moon-menu-content"><div class="moon-menu-icon"><i class="fas fa-ellipsis-v"></i></div><div class="moon-menu-text"></div></div></div></div><script src="/js/injector.js"></script></body></html>
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-fish"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ava</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">27k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+<script>
+NexT.utils.loadComments('#twikoo-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js', () => {
+    twikoo.init(Object.assign({"enable":true,"visitor":true,"envId":"jmuava-0gg6qwdp2f8dd251"}, {
+      el: '#twikoo-comments'
+    }));
+  }, window.twikoo);
+});
+</script>
+
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+  <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script async src="/js/explosion.min.js"></script>
+
+<script type="text/javascript" src="/js/fold_action.js"></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>

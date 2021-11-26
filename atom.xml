@@ -6,7 +6,7 @@
   <link href="http://jmuava.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jmuava.gitee.io/"/>
-  <updated>2021-11-01T10:10:54.997Z</updated>
+  <updated>2021-11-26T02:50:01.726Z</updated>
   <id>http://jmuava.gitee.io/</id>
   
   <author>
@@ -17,17 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CentOS8离线安装Mysql WorkBench步骤</title>
+    <link href="http://jmuava.gitee.io/posts/7e9f10c2/"/>
+    <id>http://jmuava.gitee.io/posts/7e9f10c2/</id>
+    <published>2021-11-26T02:45:18.000Z</published>
+    <updated>2021-11-26T02:50:01.726Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;CentOS8离线安装Mysql-WorkBench步骤&quot;&gt;&lt;a href=&quot;#CentOS8离线安装Mysql-WorkBench步骤&quot; class=&quot;headerlink&quot; title=&quot;CentOS8离线安装Mysql WorkBench步骤&quot;&gt;&lt;/a&gt;CentOS8离线安装Mysql WorkBench步骤&lt;/h3&gt;&lt;p&gt;下载mysql workbench对应系统版本的安装包，&lt;a href=&quot;https://dev.mysql.com/downloads/workbench/&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;解压安装&quot;&gt;&lt;a href=&quot;#解压安装&quot; class=&quot;headerlink&quot; title=&quot;解压安装&quot;&gt;&lt;/a&gt;解压安装&lt;/h4&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# cd /usr/local&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# mkdir mySql&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# ls&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# cd mySql&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# rpm -ivh /home/roo/下载/mysql-workbench-community-8.0.27-1.el8.x86_64.rpm  //解压安装&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+    <category term="CentOS8" scheme="http://jmuava.gitee.io/tags/CentOS8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【PicGo+Typora+Gitee】markdown图片上传并获取网络地址</title>
     <link href="http://jmuava.gitee.io/posts/fb1f1bf6/"/>
     <id>http://jmuava.gitee.io/posts/fb1f1bf6/</id>
     <published>2021-10-27T03:19:56.000Z</published>
-    <updated>2021-11-01T10:10:54.997Z</updated>
+    <updated>2021-11-02T09:11:25.659Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Gitee&lt;/p&gt;
-&lt;p&gt;新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/jmuAva/blogimage/raw/master/img/image-20211027102140541.png&quot; alt=&quot;新建仓库&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;p&gt;新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
     
     
     
@@ -54,7 +71,7 @@
     <link href="http://jmuava.gitee.io/posts/e6e4b7aa/"/>
     <id>http://jmuava.gitee.io/posts/e6e4b7aa/</id>
     <published>2021-02-24T06:50:21.000Z</published>
-    <updated>2021-11-01T10:10:54.995Z</updated>
+    <updated>2021-11-02T08:16:56.090Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;有中文路径的链接经常会乱码，插件hexo-abbrlink会将原来的URL地址重新进行进制转换和再编码，于是决定引入该插件。根据网上的教程安装后，博客里的图片都不能正常显示了。&lt;/p&gt;
@@ -72,7 +89,7 @@
     <link href="http://jmuava.gitee.io/posts/58272/"/>
     <id>http://jmuava.gitee.io/posts/58272/</id>
     <published>2021-02-20T03:29:57.000Z</published>
-    <updated>2021-11-01T10:10:54.991Z</updated>
+    <updated>2021-11-02T08:15:37.714Z</updated>
     
     
     <summary type="html">&lt;p&gt;由于可抗力（Twikoo真香！）因素，搭建博客不到一个月，决定更新主题版本。&lt;/p&gt;
@@ -90,7 +107,7 @@
     <link href="http://jmuava.gitee.io/posts/43436/"/>
     <id>http://jmuava.gitee.io/posts/43436/</id>
     <published>2021-02-20T02:29:55.000Z</published>
-    <updated>2021-11-01T10:10:54.986Z</updated>
+    <updated>2021-11-02T08:18:12.748Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
@@ -133,7 +150,7 @@
     <link href="http://jmuava.gitee.io/posts/32997/"/>
     <id>http://jmuava.gitee.io/posts/32997/</id>
     <published>2021-02-05T09:05:37.000Z</published>
-    <updated>2021-11-01T10:10:54.981Z</updated>
+    <updated>2021-11-02T08:20:47.149Z</updated>
     
     
     <summary type="html">&lt;p&gt;版本：Hexo - 5.3.0    NexT - 7.8.0 (持续更新)&lt;/p&gt;
@@ -153,7 +170,7 @@
     <link href="http://jmuava.gitee.io/posts/b692fe48/"/>
     <id>http://jmuava.gitee.io/posts/b692fe48/</id>
     <published>2021-02-04T03:49:39.000Z</published>
-    <updated>2021-11-01T10:10:54.993Z</updated>
+    <updated>2021-11-02T08:17:15.577Z</updated>
     
     
     <summary type="html">&lt;h5 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h5&gt;&lt;p&gt;若依框架封装的 startPage() 方法只对该语句以后的第一个查询（Select）语句得到的数据进行分页。&lt;br&gt;而现在的需求是要对查询到以后进行拼接或筛选的list数据进行分页操作并在前端展示。&lt;/p&gt;</summary>
@@ -170,10 +187,11 @@
     <link href="http://jmuava.gitee.io/posts/b2bf1dca/"/>
     <id>http://jmuava.gitee.io/posts/b2bf1dca/</id>
     <published>2021-02-04T02:21:44.000Z</published>
-    <updated>2021-11-01T10:10:54.984Z</updated>
+    <updated>2021-11-02T08:19:05.287Z</updated>
     
     
-    <summary type="html">The article has been encrypted, please enter your password to view.&lt;br&gt;</summary>
+    <summary type="html">&lt;h5 id=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;a href=&quot;#在vue项目里使用iframe框架&quot; class=&quot;headerlink&quot; title=&quot;在vue项目里使用iframe框架&quot;&gt;&lt;/a&gt;在vue项目里使用iframe框架&lt;/h5&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div id=&lt;span class=&quot;string&quot;&gt;&amp;quot;middle&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;iframe id=&amp;quot;3diframe&amp;quot; ref=&amp;quot;iframe&amp;quot; :src=&amp;#x27;src1&amp;#x27;  width=&amp;quot;730px&amp;quot; height=&amp;quot;918px&amp;quot; style=&amp;quot;background-color=transparent&amp;quot; frameborder=&amp;quot;0&amp;quot; title=&amp;quot;test&amp;quot; scrolling=&amp;quot;no&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;src既可以直接写进去当成静态使用，也可以写进script里动态改变&lt;/p&gt;</summary>
     
     
     

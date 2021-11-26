@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="CentOS8离线安装Mysql WorkBench步骤下载mysql workbench对应系统版本的安装包，下载地址 解压安装12345# cd &#x2F;usr&#x2F;local# mkdir mySql# ls# cd mySql# rpm -ivh &#x2F;home&#x2F;roo&#x2F;下载&#x2F;mysql-workbench-community-8.0.27-1.el8.x86_64.rpm  &#x2F;&#x2F;解压安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS8离线安装Mysql WorkBench步骤">
+<meta property="og:url" content="http://jmuava.gitee.io/posts/7e9f10c2/index.html">
+<meta property="og:site_name" content="Ava&#39;s blog">
+<meta property="og:description" content="CentOS8离线安装Mysql WorkBench步骤下载mysql workbench对应系统版本的安装包，下载地址 解压安装12345# cd &#x2F;usr&#x2F;local# mkdir mySql# ls# cd mySql# rpm -ivh &#x2F;home&#x2F;roo&#x2F;下载&#x2F;mysql-workbench-community-8.0.27-1.el8.x86_64.rpm  &#x2F;&#x2F;解压安装">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125094458052.png">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125110005523.png">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125161128586.png">
+<meta property="og:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125161607476.png">
+<meta property="article:published_time" content="2021-11-26T02:45:18.000Z">
+<meta property="article:modified_time" content="2021-11-26T02:50:01.726Z">
+<meta property="article:author" content="Ava">
+<meta property="article:tag" content="CentOS8">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125094458052.png">
+
+
+<link rel="canonical" href="http://jmuava.gitee.io/posts/7e9f10c2/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>CentOS8离线安装Mysql WorkBench步骤 | Ava's blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Ava's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ava's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">keep study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS8%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Mysql-WorkBench%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">CentOS8离线安装Mysql WorkBench步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">解压安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E9%9C%80%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">查询所需依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%BA%90"><span class="nav-number">1.3.</span> <span class="nav-text">手动配置离线安装源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.4.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85workBench"><span class="nav-number">1.5.</span> <span class="nav-text">重新安装workBench</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ava"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Ava</p>
+  <div class="site-description" itemprop="description">一个记录的过程</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jmuava.gitee.io/posts/7e9f10c2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Ava">
+      <meta itemprop="description" content="一个记录的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ava's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CentOS8离线安装Mysql WorkBench步骤
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-26 10:45:18 / 修改时间：10:50:01" itemprop="dateCreated datePublished" datetime="2021-11-26T10:45:18+08:00">2021-11-26</time>
+    </span>
+
+  
+    <span id="/posts/7e9f10c2/" class="post-meta-item twikoo_visitors" data-flag-title="CentOS8离线安装Mysql WorkBench步骤" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="twikoo_visitors"></span>
+    </span>
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="CentOS8离线安装Mysql-WorkBench步骤"><a href="#CentOS8离线安装Mysql-WorkBench步骤" class="headerlink" title="CentOS8离线安装Mysql WorkBench步骤"></a>CentOS8离线安装Mysql WorkBench步骤</h3><p>下载mysql workbench对应系统版本的安装包，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://dev.mysql.com/downloads/workbench/">下载地址</a></p>
+<h4 id="解压安装"><a href="#解压安装" class="headerlink" title="解压安装"></a>解压安装</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local</span><br><span class="line"># mkdir mySql</span><br><span class="line"># ls</span><br><span class="line"># cd mySql</span><br><span class="line"># rpm -ivh /home/roo/下载/mysql-workbench-community-8.0.27-1.el8.x86_64.rpm  //解压安装</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<blockquote>
+<p>rpm （RPM package manager）是红帽（RedHat）软件包管理工具，实现类似于 Windows 中的添加/删除程序功能</p>
+<p>#rpm -ivh 包名   ：用于安装rpm软件包，i代表安装、v代表可视化安装、h代表安装的时候显示进度。</p>
+</blockquote>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125094458052.png" alt="image-20211125094458052"></p>
+<p>安装失败，缺少依赖包</p>
+<h4 id="查询所需依赖包"><a href="#查询所需依赖包" class="headerlink" title="查询所需依赖包"></a>查询所需依赖包</h4><p>所需各依赖包<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pkgs.org/">下载地址</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mySql]# yum whatprovides */libOpenGL.so.0</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">03</span>:<span class="number">16</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">libglvnd-opengl-<span class="number">1</span>:<span class="number">1.3</span><span class="number">.2</span>-<span class="number">1.</span>el8.i686 : OpenGL support <span class="keyword">for</span> libglvnd</span><br><span class="line">仓库        ：appstream</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib/libOpenGL.so<span class="number">.0</span></span><br><span class="line"></span><br><span class="line">libglvnd-opengl-<span class="number">1</span>:<span class="number">1.3</span><span class="number">.2</span>-<span class="number">1.</span>el8.x86_64 : OpenGL support <span class="keyword">for</span> libglvnd</span><br><span class="line">仓库        ：appstream</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib64/libOpenGL.so<span class="number">.0</span></span><br><span class="line"></span><br><span class="line">[root@localhost mySql]# yum whatprovides */libpcrecpp.so.0</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">03</span>:<span class="number">40</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">pcre-cpp-<span class="number">8.42</span>-<span class="number">6.</span>el8.i686 : C++ bindings <span class="keyword">for</span> PCRE</span><br><span class="line">仓库        ：baseos</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib/libpcrecpp.so<span class="number">.0</span></span><br><span class="line"></span><br><span class="line">pcre-cpp-<span class="number">8.42</span>-<span class="number">6.</span>el8.x86_64 : C++ bindings <span class="keyword">for</span> PCRE</span><br><span class="line">仓库        ：baseos</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib64/libpcrecpp.so<span class="number">.0</span></span><br><span class="line"></span><br><span class="line">[root@localhost mySql]# yum whatprovides */libzip</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">05</span>:<span class="number">38</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">libzip-<span class="number">1.5</span><span class="number">.1</span>-<span class="number">2.</span>module_el8<span class="number">.2</span><span class="number">.0</span>+<span class="number">313</span>+b04d0a66.x86_64 : C library <span class="keyword">for</span> reading, creating, and</span><br><span class="line">                                                  : modifying zip archives</span><br><span class="line">仓库        ：appstream</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/share/licenses/libzip</span><br><span class="line"></span><br><span class="line">[root@localhost mySql]# yum whatprovides */libzip.so.5</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">05</span>:<span class="number">50</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">libzip-<span class="number">1.5</span><span class="number">.1</span>-<span class="number">2.</span>module_el8<span class="number">.2</span><span class="number">.0</span>+<span class="number">313</span>+b04d0a66.x86_64 : C library <span class="keyword">for</span> reading, creating, and</span><br><span class="line">                                                  : modifying zip archives</span><br><span class="line">仓库        ：appstream</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib64/libzip.so<span class="number">.5</span></span><br><span class="line"></span><br><span class="line">[root@localhost mySql]# yum whatprovides */libpython3.8.so.1.0</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">06</span>:<span class="number">59</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">python38-libs-<span class="number">3.8</span><span class="number">.8</span>-<span class="number">4.</span>module_el8<span class="number">.5</span><span class="number">.0</span>+<span class="number">896</span>+eb9e77ba.x86_64 : Python runtime libraries</span><br><span class="line">仓库        ：appstream</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/lib64/libpython3<span class="number">.8</span>.so<span class="number">.1</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line">[root@localhost mySql]# yum whatprovides */libproj.so.15</span><br><span class="line">上次元数据过期检查：<span class="number">19</span>:<span class="number">07</span>:<span class="number">23</span> 前，执行于 <span class="number">2021</span>年<span class="number">11</span>月<span class="number">24</span>日 星期三 <span class="number">01</span>时<span class="number">43</span>分<span class="number">37</span>秒。</span><br><span class="line">错误：没有找到匹配的软件包</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>除了libproj.so.15以外，可以看到其他依赖的安装包是python38-libs、libzip、pcre-cpp、libglvnd-opengl</p>
+<h4 id="手动配置离线安装源"><a href="#手动配置离线安装源" class="headerlink" title="手动配置离线安装源"></a>手动配置离线安装源</h4><p>下载离线安装包，手动配置两个离线安装源，一个是离线AppStream，一个是离线BaseOs</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># df -h //以容易阅读的方式显示磁盘分区使用情况</span><br><span class="line">查看硬件路径为：</span><br><span class="line">/dev/sr0</span><br><span class="line"># mkdir /media/CentOS  // 创建一个文件夹用于挂载镜像</span><br><span class="line"># mount /dev/sr0 /media/CentOS  // 挂载镜像</span><br><span class="line"># ls /media/CentOS  // 查看挂载的系统文件</span><br><span class="line"># cd /etc/yum.repos.d </span><br><span class="line"># ls </span><br><span class="line"># vim CentOS-Media.repo   // 修改安装源</span><br></pre></td></tr></table></figure>
+<p>​    新增【c8-media-my】和【c8-media-my2】俩离线安装源</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原有安装源</span></span><br><span class="line">[media-baseos]</span><br><span class="line">name=CentOS Linux $releasever - Media - BaseOS</span><br><span class="line">baseurl=file:<span class="comment">///media/CentOS/BaseOS</span></span><br><span class="line">        file:<span class="comment">///media/cdrom/BaseOS</span></span><br><span class="line">        file:<span class="comment">///media/cdrecorder/BaseOS</span></span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">0</span></span><br><span class="line">gpgkey=file:<span class="comment">///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</span></span><br><span class="line"></span><br><span class="line">[media-appstream]</span><br><span class="line">name=CentOS Linux $releasever - Media - AppStream</span><br><span class="line">baseurl=file:<span class="comment">///media/CentOS/AppStream</span></span><br><span class="line">        file:<span class="comment">///media/cdrom/AppStream</span></span><br><span class="line">        file:<span class="comment">///media/cdrecorder/AppStream</span></span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">0</span></span><br><span class="line">gpgkey=file:<span class="comment">///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新增安装源</span></span><br><span class="line">[c8-media-my]</span><br><span class="line">name=CentOS Linux $releasever - Media - AppStream</span><br><span class="line">baseurl=file:<span class="comment">///media/CentOS/AppStream</span></span><br><span class="line">        file:<span class="comment">///media/cdrom/AppStream</span></span><br><span class="line">        file:<span class="comment">///media/cdrecorder/AppStream</span></span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">0</span></span><br><span class="line">gpgkey=file:<span class="comment">///madia/CentOS/rpm-gpg/RPM-GPG-KEY-centosofficial</span></span><br><span class="line"></span><br><span class="line">[c8-media-my2]</span><br><span class="line">name=CentOS Linux $releasever - Media - BaseOS</span><br><span class="line">baseurl=file:<span class="comment">///media/CentOS/BaseOS</span></span><br><span class="line">        file:<span class="comment">///media/cdrom/BaseOS</span></span><br><span class="line">        file:<span class="comment">///media/cdrecorder/BaseOS</span></span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">0</span></span><br><span class="line">gpgkey=file:<span class="comment">///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125110005523.png" alt="image-20211125110005523"></p>
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># yum --disablerepo=\* --enablerepo=c8-media-my install python38-libs // AppStream</span><br><span class="line"># yum --disablerepo=\* --enablerepo=c8-media-my install libglvnd-opengl	</span><br><span class="line"># yum --disablerepo=\* --enablerepo=c8-media-my install libzip</span><br><span class="line"># yum --disablerepo=\* --enablerepo=c8-media-my2 install pcre-cpp   // BaseOs</span><br></pre></td></tr></table></figure>
+<p>其中的libproj.so.15需要安装依赖包proj-devel</p>
+<p><strong>其他的安装包可能也不需要配置离线安装源，可以直接使用rpm命令解压安装，服务器可以尝试一下</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rpm安装包离线安装</span></span><br><span class="line"># rpm -ivh proj-datumgrid-1.8-6.3.2.4.el8.noarch.rpm</span><br><span class="line"># rpm -ivh proj-6.3.2-4.el8.x86_64.rpm</span><br><span class="line"># rpm -ivh proj-devel-6.3.2-4.el8.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="重新安装workBench"><a href="#重新安装workBench" class="headerlink" title="重新安装workBench"></a>重新安装workBench</h4><p>所有依赖安装完之后，重新执行mysql-workbench安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd &#x2F;usr&#x2F;local&#x2F;mySql</span><br><span class="line"># rpm -ivh &#x2F;home&#x2F;roo&#x2F;下载&#x2F;mysql-workbench-community-8.0.27-1.el8.x86_64.rpm  </span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125161128586.png" alt="image-20211125161128586"></p>
+<p>安装成功后，在应用程序里就会出现mysql workBench的图标，直接双击试用</p>
+<p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/11/image-20211125161607476.png" alt="image-20211125161607476"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ava
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jmuava.gitee.io/posts/7e9f10c2/" title="CentOS8离线安装Mysql WorkBench步骤">http://jmuava.gitee.io/posts/7e9f10c2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/CentOS8/" rel="tag"># CentOS8</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/fb1f1bf6/" rel="prev" title="【PicGo+Typora+Gitee】markdown图片上传并获取网络地址">
+                  <i class="fa fa-chevron-left"></i> 【PicGo+Typora+Gitee】markdown图片上传并获取网络地址
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments"><div id="twikoo-comments"></div></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-fish"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ava</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">27k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+<script>
+NexT.utils.loadComments('#twikoo-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js', () => {
+    twikoo.init(Object.assign({"enable":true,"visitor":true,"envId":"jmuava-0gg6qwdp2f8dd251"}, {
+      el: '#twikoo-comments'
+    }));
+  }, window.twikoo);
+});
+</script>
+
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+  <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script async src="/js/explosion.min.js"></script>
+
+<script type="text/javascript" src="/js/fold_action.js"></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>

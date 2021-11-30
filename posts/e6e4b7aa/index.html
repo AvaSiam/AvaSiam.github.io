@@ -17,12 +17,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"jmuava.gitee.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="问题描述有中文路径的链接经常会乱码，插件hexo-abbrlink会将原来的URL地址重新进行进制转换和再编码，于是决定引入该插件。根据网上的教程安装后，博客里的图片都不能正常显示了。 教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！">
 <meta property="og:type" content="article">
@@ -98,7 +97,7 @@
 <link rel="alternate" href="/atom.xml" title="Ava's blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="headband"></div>
 
   <main class="main">
@@ -583,7 +582,7 @@ if(canvas.getContext){
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>有中文路径的链接经常会乱码，插件hexo-abbrlink会将原来的URL地址重新进行进制转换和再编码，于是决定引入该插件。根据网上的教程安装后，博客里的图片都不能正常显示了。</p>
-<p><font color="red">教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！</font></p>
+<p><font color=red>教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！</font></p>
 <a id="more"></a>
 
 <p><img src="https://gitee.com/jmuAva/blogimage/raw/master/img/2021/10/1614154196927.png" alt="教程图片"></p>
@@ -596,7 +595,7 @@ if(canvas.getContext){
 <li><p>hexo clean、hexo generate生成静态文件后，图片找不到路径。</p>
 </li>
 </ul>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p><font color="red">有问题先看看官方文档或者github上的issue</font></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p><font color=red>有问题先看看官方文档或者github上的issue</font></p>
 <p>修改permalink设置后，图片显示正常。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: posts&#x2F;:abbrlink&#x2F;</span><br></pre></td></tr></table></figure>
 <p>若依旧不能正常显示的话，可以尝试其他方案，详见参考文章。</p>
@@ -714,7 +713,7 @@ if(canvas.getContext){
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="/js/local-search.js"></script>
@@ -732,7 +731,7 @@ if(canvas.getContext){
 <script>
 NexT.utils.loadComments('#twikoo-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js', () => {
-    twikoo.init(Object.assign({"enable":true,"visitor":true,"envId":"jmuava-0gg6qwdp2f8dd251"}, {
+    twikoo.init(Object.assign({"enable":true,"visitor":true,"envId":"env-9g9if1e3dc992f0d"}, {
       el: '#twikoo-comments'
     }));
   }, window.twikoo);

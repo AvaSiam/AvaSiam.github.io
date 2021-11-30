@@ -44,7 +44,7 @@
     
     <summary type="html">&lt;h4 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Gitee&lt;/p&gt;
-&lt;p&gt;新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;p&gt;新建一个仓库，用来存放上传的图片，记得要设置为开源，点击创建&lt;/p&gt;</summary>
     
     
     
@@ -75,7 +75,7 @@
     
     
     <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;有中文路径的链接经常会乱码，插件hexo-abbrlink会将原来的URL地址重新进行进制转换和再编码，于是决定引入该插件。根据网上的教程安装后，博客里的图片都不能正常显示了。&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！&lt;/font&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;font color=red&gt;教程有风险，选择需谨慎，教程的配置不一定完全适合你的环境！&lt;/font&gt;&lt;/p&gt;</summary>
     
     
     
@@ -107,10 +107,10 @@
     <link href="http://jmuava.gitee.io/posts/43436/"/>
     <id>http://jmuava.gitee.io/posts/43436/</id>
     <published>2021-02-20T02:29:55.000Z</published>
-    <updated>2021-11-02T08:18:12.748Z</updated>
+    <updated>2021-11-26T05:48:22.453Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;font color=red&gt;NexT主题有三个不同的仓库，许多网络上更改主题的文章教程由于时间问题，没有区分这三个仓库的区别，特别是后两个名称相近的。git clone主题的时候注意仓库位置！！&lt;/font&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
